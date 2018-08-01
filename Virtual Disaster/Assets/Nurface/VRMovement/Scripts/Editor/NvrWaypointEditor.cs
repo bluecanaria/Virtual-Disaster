@@ -37,7 +37,7 @@ public class NvrWaypointEditor : Editor {
             // Spawn a new waypoint Gameobject
             GameObject newWaypoint = null;
             // Try to find a source prefab object
-            Object prefabRoot = PrefabUtility.GetPrefabParent(myScript.gameObject);
+            Object prefabRoot = PrefabUtility.GetCorrespondingObjectFromSource(myScript.gameObject);
             // If there is a prefab
             if (prefabRoot != null) {
                 // Spawn the prefab
