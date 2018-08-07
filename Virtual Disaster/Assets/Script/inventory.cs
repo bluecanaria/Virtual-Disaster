@@ -42,7 +42,8 @@ public class inventory : MonoBehaviour
                 pick.pick = false;
                 player_posi = player.transform.position;
                 pick.player_place = player_posi;
-                player.transform.position = new Vector3(960, 540, -935);
+                player.transform.position = new Vector3(960, 651, -1318);
+                player.transform.Rotate(78, 0, 0);
 
                 movement.disable_move = false;
                 
@@ -55,6 +56,7 @@ public class inventory : MonoBehaviour
                 invLight.SetActive(false);
                 pick.pick = true;
                 player.transform.position = player_posi;
+                player.transform.Rotate(-78, 0, 0);
                 inven = false;
 
                 movement.disable_move = true;
