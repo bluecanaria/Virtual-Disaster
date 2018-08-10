@@ -43,7 +43,7 @@ public class inventory : MonoBehaviour
                 var rotationVector = transform.rotation.eulerAngles;
 
 
-                Camera.main.transform.rotation = Quaternion.Euler(0,0,0);
+                mainCamera.transform.rotation = Quaternion.Euler(0,0,0);
 
                 player.transform.rotation = Quaternion.Euler(78,0,0);
 
@@ -65,7 +65,7 @@ public class inventory : MonoBehaviour
                 invLight.SetActive(false);
                 pick.pick = true;
 
-                Camera.main.transform.rotation = Quaternion.Euler(0,0,0);
+                mainCamera.transform.rotation = Quaternion.Euler(0,0,0);
 
                 player.transform.rotation = Quaternion.Euler(0,0,0);
 
