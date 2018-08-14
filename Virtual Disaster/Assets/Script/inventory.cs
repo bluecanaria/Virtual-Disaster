@@ -6,7 +6,6 @@ public class inventory : MonoBehaviour
 {
 
     public GameObject invLight;
-    public GameObject mainCamera;
     public GameObject player;
     NvrBluetoothController movement;
     pickup pick;
@@ -18,7 +17,29 @@ public class inventory : MonoBehaviour
 
     ///물ㄹ건들 
     public GameObject Bottle_1;
-    public GameObject Candy_Bar;
+    public GameObject Bottle_2;
+    public GameObject Bottle_3;
+    public GameObject Medkit;
+    public GameObject Candy_Bar_1;
+    public GameObject Candy_Bar_2;
+    public GameObject Candy_Bar_3;
+    public GameObject Towel;
+    public GameObject Can_1;
+    public GameObject Can_2;
+    public GameObject Can_3;
+    public GameObject Clothes;
+    public GameObject Cereal_1;
+    public GameObject Cereal_2;
+    public GameObject Cup;
+    public GameObject Flashlight;
+    public GameObject Knife;
+    public GameObject Toiletpaper;
+    public GameObject Bed_sheets;
+    public GameObject Lighter;
+    public GameObject Instant_1;
+    public GameObject Instant_2;
+    public GameObject Spoon;
+    public GameObject Plate;
 
     // Use this for initialization
     private void Awake()
@@ -42,14 +63,11 @@ public class inventory : MonoBehaviour
                 pick.pick = false;
                 var rotationVector = transform.rotation.eulerAngles;
 
-
-                mainCamera.transform.rotation = Quaternion.Euler(0,0,0);
-
                 player.transform.rotation = Quaternion.Euler(78,0,0);
 
                 player_posi = player.transform.position;
                 pick.player_place = player_posi;
-                player.transform.position = new Vector3(960, 651, -1318);
+                player.transform.position = new Vector3(960, 650, -1318);
 
                
 
@@ -64,8 +82,6 @@ public class inventory : MonoBehaviour
             {
                 invLight.SetActive(false);
                 pick.pick = true;
-
-                mainCamera.transform.rotation = Quaternion.Euler(0,0,0);
 
                 player.transform.rotation = Quaternion.Euler(0,0,0);
 
