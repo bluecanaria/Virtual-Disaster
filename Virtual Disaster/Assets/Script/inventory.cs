@@ -7,12 +7,14 @@ public class inventory : MonoBehaviour
 
     public GameObject invLight;
     public GameObject player;
-    NvrBluetoothController movement;
+    move movement;
     pickup pick;
 
     private bool inven;
     private Vector3 player_posi;
 
+    //////////////////////////예진/////////////////////////////
+    private GameObject cubeCamera;
 
 
     ///물ㄹ건들 
@@ -46,8 +48,11 @@ public class inventory : MonoBehaviour
     {
         inven = false;
         invLight.SetActive(false);
-        movement = player.GetComponent<NvrBluetoothController>();
+        movement = player.GetComponent<move>();
         pick = player.GetComponent<pickup>();
+
+        //////////////////////////예진/////////////////////////////
+        cubeCamera = player.transform.GetChild(0).gameObject;
 
     }
 
