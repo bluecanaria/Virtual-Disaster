@@ -14,10 +14,15 @@ public class Crouch : MonoBehaviour
     float crouchHeight = 1.5f;
     float smooth = 0;
     bool isCrouched;
+    GameObject cubeCamera;
 
     private void Start()
     {
-        player = gameObject.GetComponent<CharacterController>();
+        //player = gameObject.GetComponent<CharacterController>();
+        cubeCamera = gameObject.transform.GetChild(0).gameObject;
+        //cubeCamera = gameObject.transform.FindChild("Cube").gameObject;
+        Debug.Log(gameObject.transform.GetChild(0).gameObject);
+        Debug.Log(cubeCamera);
         isCrouched = false;
     }
 
@@ -26,61 +31,59 @@ public class Crouch : MonoBehaviour
         if (Input.GetKey(KeyCode.X) && isCrouched != true)
         {
             isCrouched = true;
-            player.height = 0.0f;
         }
         else if (Input.GetKey(KeyCode.X) && isCrouched == true)
         {
             isCrouched = false;
-            player.height = 1.7f;
         }
-        //    if (LeftTexture.activeSelf)
-        //    {
-        //        RightTexture.SetActive(true);
-        //        LeftTexture.SetActive(false);
-        //    }
-        //    else if (RightTexture.activeSelf)
-        //    {
-        //        LeftTexture.SetActive(true);
-        //        RightTexture.SetActive(false);
-        //    }
-
-
-        //if (LeftTexture.activeSelf)
-        //{
-        //    player.height = crouchHeight;
-        //    crouchHead.SetActive(true);
-        //    crouchCollider.enabled = true;
-        //}
-
-        //if (RightTexture.activeSelf)
-        //{
-        //    player.height = player.height = Mathf.Lerp(player.height, standHeight, Time.deltaTime * smooth);
-        //    crouchHead.SetActive(false);
-        //    crouchCollider.enabled = false;
-        //}
     }
 
-    void OnCollisionEnter(Collision collision)
+    //void OnCollisionEnter(Collision collision)
+    //{
+    //    Debug.Log("collision");
+    //    if (collision.gameObject.tag == "table")
+    //    {
+    //        Debug.Log("table");
+    //        x를 누르면 수그린다
+    //        if (Input.GetKey(KeyCode.X))
+    //        {
+    //            Debug.Log("crouch");
+    //            isCrouched = true;
+    //            cubeCamera.transform.position = new Vector3(0, -0.5f, 0);
+
+    //        }
+    //    }
+    //}
+
+    private void OnCollisionStay(Collision collision)
     {
-        Debug.Log("collision");
+        //Debug.Log("collision");
         if (collision.gameObject.tag == "table")
         {
-            Debug.Log("table");
+            //Debug.Log("table");
+            //x를 누르면 수그린다
+            if (Input.GetKey(KeyCode.X) && !isCrouched)
+            {
+                Debug.Log("crouch");
+                isCrouched = true;
+                cubeCamera.transform.position = new Vector3(0, -0.5f, 0);
+
+            }
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(other.name);
-        if (other.gameObject.tag == "table")
-        {
-            Debug.Log("table");
-        }
-        if (other.gameObject.tag == "Player")
-        {
-            Debug.Log("player");
-        }
-    }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    Debug.Log(other.name);
+    //    if (other.gameObject.tag == "table")
+    //    {
+    //        Debug.Log("table");
+    //    }
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        Debug.Log("player");
+    //    }
+    //}
     //private void OnTriggerStay(Collider other)
     //{
     //    Debug.Log("triggerstay");
