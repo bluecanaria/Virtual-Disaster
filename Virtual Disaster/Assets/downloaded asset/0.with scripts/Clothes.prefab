@@ -9,22 +9,22 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1563044602133202}
+  m_RootGameObject: {fileID: 1113037071136336}
   m_IsPrefabAsset: 1
---- !u!1 &1563044602133202
+--- !u!1 &1113037071136336
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4637559742253798}
-  - component: {fileID: 33037699022215510}
-  - component: {fileID: 23253006710203556}
-  - component: {fileID: 54587367276020802}
-  - component: {fileID: 65608574740625460}
-  - component: {fileID: 114359605827943358}
-  - component: {fileID: 114124720809782116}
+  - component: {fileID: 4974835046791086}
+  - component: {fileID: 33595127481055310}
+  - component: {fileID: 23898709943507946}
+  - component: {fileID: 54617615635754402}
+  - component: {fileID: 65709771163224784}
+  - component: {fileID: 114441985883309196}
+  - component: {fileID: 114170759280608210}
   m_Layer: 0
   m_Name: Clothes
   m_TagString: Untagged
@@ -32,12 +32,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4637559742253798
+--- !u!4 &4974835046791086
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1563044602133202}
+  m_GameObject: {fileID: 1113037071136336}
   m_LocalRotation: {x: -0.47854894, y: -0.4814297, z: -0.5207938, w: 0.5176776}
   m_LocalPosition: {x: -7.9829597, y: -0.4674461, z: 19.533588}
   m_LocalScale: {x: 0.04000105, y: 0.068798974, z: 0.07205001}
@@ -45,12 +45,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90.344}
---- !u!23 &23253006710203556
+--- !u!23 &23898709943507946
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1563044602133202}
+  m_GameObject: {fileID: 1113037071136336}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -80,19 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33037699022215510
+--- !u!33 &33595127481055310
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1563044602133202}
+  m_GameObject: {fileID: 1113037071136336}
   m_Mesh: {fileID: 4300000, guid: ec1bf6af6e38cca4c93d68c318240405, type: 3}
---- !u!54 &54587367276020802
+--- !u!54 &54617615635754402
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1563044602133202}
+  m_GameObject: {fileID: 1113037071136336}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -102,24 +102,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65608574740625460
+--- !u!65 &65709771163224784
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1563044602133202}
+  m_GameObject: {fileID: 1113037071136336}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 7.8867064, y: 8.4414425, z: 1.4708322}
   m_Center: {x: -0.00070130825, y: -0.00005698204, z: 0.00064888614}
---- !u!114 &114124720809782116
+--- !u!114 &114170759280608210
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1563044602133202}
+  m_GameObject: {fileID: 1113037071136336}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -130,7 +130,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114359605827943358}
+        - m_Target: {fileID: 114441985883309196}
           m_MethodName: onPointerEnter
           m_Mode: 1
           m_Arguments:
@@ -147,7 +147,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114359605827943358}
+        - m_Target: {fileID: 114441985883309196}
           m_MethodName: onPointerExit
           m_Mode: 1
           m_Arguments:
@@ -161,12 +161,12 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114359605827943358
+--- !u!114 &114441985883309196
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1563044602133202}
+  m_GameObject: {fileID: 1113037071136336}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8627689de6355e24a8fdc30f9fd878f6, type: 3}

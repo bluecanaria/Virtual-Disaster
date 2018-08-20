@@ -5,6 +5,30 @@ TagManager:
   serializedVersion: 2
   tags:
   - table
+  - Bottle_1
+  - Bottle_2
+  - Bottle_3
+  - Medkit
+  - Candy_Bar_1
+  - Candy_Bar_2
+  - Candy_Bar_3
+  - Towel
+  - Can_1
+  - Can_2
+  - Can_3
+  - Clothes
+  - Cereal_1
+  - Cereal_2
+  - Cup
+  - Flashlight
+  - Knife
+  - Lighter
+  - Toiletpaper
+  - Bed_sheets
+  - Instant_1
+  - Instant_2
+  - Spoon
+  - Plate
   layers:
   - Default
   - TransparentFX
