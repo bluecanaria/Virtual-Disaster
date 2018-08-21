@@ -6,14 +6,18 @@ public class Tutorial : MonoBehaviour {
 
     public GameObject prevent;
     public GameObject nextevent;
+    public GameObject TutorialMenu;
+    public GameObject MenuObject;
+    public GameObject player;
     public bool TutoMove;
     public bool TutoGetItem;
     public bool TutoOpenInven;
     public bool TutoDropItem;
     public bool TutoCloseInven;
+    public bool Tutofinal;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -22,7 +26,8 @@ public class Tutorial : MonoBehaviour {
 
         if(TutoMove == true)
         {
-
+            player.GetComponent<move>().enabled = true;
+            Tutorial_Move();
         }
 
         else if (TutoGetItem == true)
@@ -45,6 +50,11 @@ public class Tutorial : MonoBehaviour {
 
         }
 
+        else if (Tutofinal == true)
+        {
+            Tutorial_close();
+        }
+
         else
         {
             Tutorial_next();
@@ -63,7 +73,20 @@ public class Tutorial : MonoBehaviour {
 
     void Tutorial_Move()
     {
-        //if(player.position.x>50 || player.position.x<-50 || player.position.y>50 || player.position.y<-50)
-        //
+          if(player.transform.position.x < -38 || player.transform.position.x > -32)
+        {
+            player.GetComponent<move>().enabled = false;
+            player.transform.position = new Vector3(-35, 1.2f, 30);
+            prevent.SetActive(false);
+            nextevent.SetActive(true);
+        }
+    }
+
+    void Tutorial_close()
+    {
+        prevent.SetActive(false);
+        nextevent.SetActive(true);
+        TutorialMenu.SetActive(false);
+        MenuObject.SetActive(true);
     }
 }
