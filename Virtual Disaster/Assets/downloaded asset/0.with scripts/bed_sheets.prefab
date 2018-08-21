@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114691211257801082}
   - component: {fileID: 114078859435846978}
   m_Layer: 0
-  m_Name: Bed_sheets
+  m_Name: bed_sheets
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
