@@ -21,14 +21,11 @@ public class Crouch : MonoBehaviour
     private bool rotating = false;
     move movement;
 
+
     private void Start()
     {
-        //player = gameObject.GetComponent<CharacterController>();
-        cubeCamera = gameObject.transform.GetChild(0).gameObject;
         player = GameObject.FindGameObjectWithTag("Player");
-        //cubeCamera = gameObject.transform.FindChild("Cube").gameObject;
-        //Debug.Log(gameObject.transform.GetChild(0).gameObject);
-        //Debug.Log(cubeCamera);
+        cubeCamera = player.transform.GetChild(0).gameObject;
         isCrouched = false;
         currentRot = transform.eulerAngles; //플레이어가 바라보는 각도
         movement = player.GetComponent<move>();
@@ -36,33 +33,16 @@ public class Crouch : MonoBehaviour
 
     void Update()
     {
-        //if (Input.GetKey(KeyCode.X) && isCrouched != true)
-        //{
-        //    isCrouched = true;
-        //}
-        //else if (Input.GetKey(KeyCode.X) && isCrouched == true)
-        //{
-        //    isCrouched = false;
-        //}
+        //Fire1은 컨트롤러의 x버튼이다
+        if(Input.GetButtonUp("Fire1") && isCrouched)
+        {
+            Debug.Log("not crouch");
+            cubeCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.4f , player.transform.position.z);
+            isCrouched = false;
+            movement.disable_move = true;
+        }
     }
-
-    //void OnCollisionEnter(Collision collision)
-    //{
-    //    Debug.Log("collision");
-    //    if (collision.gameObject.tag == "table")
-    //    {
-    //        Debug.Log("table");
-    //        x를 누르면 수그린다
-    //        if (Input.GetKey(KeyCode.X))
-    //        {
-    //            Debug.Log("crouch");
-    //            isCrouched = true;
-    //            cubeCamera.transform.position = new Vector3(0, -0.5f, 0);
-
-    //        }
-    //    }
-    //}
-
+    //Input.GetKeyDown(KeyCode.X)
     private void OnCollisionStay(Collision collision)
     {
         //Debug.Log("collision");
@@ -70,43 +50,24 @@ public class Crouch : MonoBehaviour
         {
             //Debug.Log("table");
             //x를 누르면 수그린다
-            if (Input.GetKey(KeyCode.X) && !isCrouched)
+            if (Input.GetButtonUp("Fire1") && !isCrouched)
             {
-                movement.disable_move = false;
                 Debug.Log("crouch");
+                //플레이어 못 움직이게 한다
+                movement.disable_move = false;
                 stand = cubeCamera.transform;
+                //서있을때의 카메라 위치 저장
                 stand.position = cubeCamera.transform.position;
+                //플레이어의 카메라를 수그린것처럼 이동
                 cubeCamera.transform.position = new Vector3(player.transform.position.x , player.transform.position.y-0.3f, player.transform.position.z+0.5f);
-                //cubeCamera.transform.RotateAround(transform.position, transform.up, 180f);
+                //회전하는 코루틴 함수 부른다
                 StartCoroutine("Rotate");
-                //transform.Rotate(0, Time.deltaTime * 180, 0, Space.Self);
-                //transform.RotateAround(transform.position, transform.up, 180f);
-                isCrouched = true;
 
             }
         }
     }
 
-    //IEnumerator Rotate()
-    //{
-    //    if (!rotating)
-    //    {
-    //        rotating = true;  // set the flag
-    //        targetRot.y = currentRot.y + 180; // calculate the new angle
-
-    //        while (currentRot.y < targetRot.y)
-    //        {
-    //            //Debug.Log("rotating"+Time.deltaTime);
-    //            currentRot.y = Mathf.MoveTowardsAngle(currentRot.y, targetRot.y, DegreesPerSecond * Time.deltaTime); 
-    //            cubeCamera.transform.eulerAngles = currentRot;
-    //            yield return null;
-    //        }
-
-    //        rotating = false;
-    //        isCrouched = true;
-    //    }
-    //}
-
+    //회전하는 코루틴 함수
     IEnumerator Rotate()
     {
         Quaternion startRot = transform.rotation;
@@ -117,43 +78,9 @@ public class Crouch : MonoBehaviour
             cubeCamera.transform.rotation = startRot * Quaternion.AngleAxis(t / 1f * 180f, transform.up); //or transform.right if you want it to be locally based
             yield return null;
         }
-        //cubeCamera.transform.rotation = startRot;
+        isCrouched = true;
+        Debug.Log("coroutine finish");
     }
 
-    IEnumerator turnAround()
-    {
-        //cubeCamera.transform.Rotate(0, Time.deltaTime * 180, 0, Space.Self);
-        cubeCamera.transform.RotateAround(transform.position, transform.up, 180f);
-        yield return new WaitForSeconds(1f);
-    }
-
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    Debug.Log(other.name);
-    //    if (other.gameObject.tag == "table")
-    //    {
-    //        Debug.Log("table");
-    //    }
-    //    if (other.gameObject.tag == "Player")
-    //    {
-    //        Debug.Log("player");
-    //    }
-    //}
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    Debug.Log("triggerstay");
-    //}
-    private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        Debug.Log(hit.gameObject.name);
-        if (hit.gameObject.tag == "table")
-        {
-            Debug.Log("table collided");
-        }
-        if (hit.gameObject.tag == "Player")
-        {
-            Debug.Log("Player collided");
-        }
-    }
 
 }
