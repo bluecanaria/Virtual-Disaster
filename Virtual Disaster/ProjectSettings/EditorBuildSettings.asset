@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scene/DuckTest.unity
+    guid: 64349b61668783c4984ec8608d5199fe
   m_configObjects: {}
