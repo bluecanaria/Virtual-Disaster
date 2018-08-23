@@ -6,7 +6,7 @@ public class gazeUniform_forblanket : MonoBehaviour {
 
     // private bool gazedAt ;
 
-    public GameObject player;
+    private GameObject player;
     pickup forPickup;
 
     public GameObject blanket_1;
@@ -14,6 +14,7 @@ public class gazeUniform_forblanket : MonoBehaviour {
 
     private void Awake()
     {
+        player = GameObject.Find("Player");
         forPickup = player.GetComponent<pickup>();
         //gazedAt = false;
     }

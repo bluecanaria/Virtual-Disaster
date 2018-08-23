@@ -112,6 +112,7 @@ public class pickup : MonoBehaviour
                         }
                         Bottle_1 = GameObject.Find(item_name);
                         Bottle_1.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 10;
                     }
 
                     //병 (2)
@@ -131,6 +132,7 @@ public class pickup : MonoBehaviour
                         }
                         Bottle_2 = GameObject.Find(item_name);
                         Bottle_2.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 10;
                     }
 
                     //병 (3)
@@ -150,6 +152,7 @@ public class pickup : MonoBehaviour
                         }
                         Bottle_3 = GameObject.Find(item_name);
                         Bottle_3.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 10;
                     }
 
                     else if (item_name.Length > 5 && string.Compare(item_name.Substring(0,6), "Medkit") == 0)
@@ -168,6 +171,7 @@ public class pickup : MonoBehaviour
                         }
                         Medkit = GameObject.Find(item_name);
                         Medkit.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 20;
                     }
 
 
@@ -187,9 +191,10 @@ public class pickup : MonoBehaviour
                             else
                                 invScript.Candy_Bar_1.SetActive(true);
                         }
-                    Candy_Bar_1 = GameObject.Find(item_name);
-                    Candy_Bar_1.transform.position = new Vector3(987, 647, -1317);
-                }
+                        Candy_Bar_1 = GameObject.Find(item_name);
+                        Candy_Bar_1.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
+                    }
 
                     else if (string.Compare(item_name.Substring(0, 11), "Candy_Bar_2") == 0)
                     {
@@ -207,6 +212,7 @@ public class pickup : MonoBehaviour
                         }
                         Candy_Bar_2 = GameObject.Find(item_name);
                         Candy_Bar_2.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
 
                     else if (string.Compare(item_name.Substring(0, 11), "Candy_Bar_3") == 0)
@@ -225,6 +231,7 @@ public class pickup : MonoBehaviour
                         }
                         Candy_Bar_3 = GameObject.Find(item_name);
                         Candy_Bar_3.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
 
                     else if (string.Compare(item_name.Substring(0, 5), "Towel") == 0)
@@ -243,6 +250,7 @@ public class pickup : MonoBehaviour
                         }
                         Towel = GameObject.Find(item_name);
                         Towel.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 3;
                     }
 
                     else if (string.Compare(item_name.Substring(0, 5), "Can_1") == 0)
@@ -261,6 +269,7 @@ public class pickup : MonoBehaviour
                         }
                         Can_1 = GameObject.Find(item_name);
                         Can_1.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
                     else if (string.Compare(item_name.Substring(0, 5), "Can_2") == 0)
                     {
@@ -278,6 +287,7 @@ public class pickup : MonoBehaviour
                         }
                         Can_2 = GameObject.Find(item_name);
                         Can_2.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
                     else if (string.Compare(item_name.Substring(0, 5), "Can_3") == 0)
                     {
@@ -295,6 +305,7 @@ public class pickup : MonoBehaviour
                         }
                         Can_3 = GameObject.Find(item_name);
                         Can_3.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
                     else if (string.Compare(item_name.Substring(0, 7), "Clothes") == 0)
                     {
@@ -312,6 +323,7 @@ public class pickup : MonoBehaviour
                         }
                         Clothes = GameObject.Find(item_name);
                         Clothes.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
                     else if (string.Compare(item_name.Substring(0, 8), "Cereal_1") == 0)
                     {
@@ -329,6 +341,7 @@ public class pickup : MonoBehaviour
                         }
                         Cereal_1 = GameObject.Find(item_name);
                         Cereal_1.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
                     else if (string.Compare(item_name.Substring(0, 8), "Cereal_2") == 0)
                     {
@@ -346,6 +359,7 @@ public class pickup : MonoBehaviour
                         }
                         Cereal_2 = GameObject.Find(item_name);
                         Cereal_2.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
                     else if (string.Compare(item_name.Substring(0, 3), "Cup") == 0)
                     {
@@ -363,6 +377,7 @@ public class pickup : MonoBehaviour
                         }
                         Cup = GameObject.Find(item_name);
                         Cup.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 1;
                     }
                     else if (string.Compare(item_name.Substring(0, 10), "Flashlight") == 0)
                     {
@@ -380,6 +395,7 @@ public class pickup : MonoBehaviour
                         }
                         Flashlight = GameObject.Find(item_name);
                         Flashlight.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
                     else if (string.Compare(item_name.Substring(0, 5), "Knife") == 0)
                     {
@@ -397,6 +413,7 @@ public class pickup : MonoBehaviour
                         }
                         Knife = GameObject.Find(item_name);
                         Knife.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 3;
                     }
                     else if (string.Compare(item_name.Substring(0, 11), "Toiletpaper") == 0)
                     {
@@ -414,6 +431,7 @@ public class pickup : MonoBehaviour
                         }
                         Toiletpaper = GameObject.Find(item_name);
                         Toiletpaper.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 1;
                     }
                     else if (string.Compare(item_name.Substring(0, 10), "Bed_sheets") == 0)
                     {
@@ -431,6 +449,7 @@ public class pickup : MonoBehaviour
                         }
                         Bed_sheets = GameObject.Find(item_name);
                         Bed_sheets.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 10;
                     }
                     else if (string.Compare(item_name.Substring(0, 7), "Lighter") == 0)
                     {
@@ -448,6 +467,7 @@ public class pickup : MonoBehaviour
                         }
                         Lighter = GameObject.Find(item_name);
                         Lighter.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 1;
                     }
                     else if (string.Compare(item_name.Substring(0, 9), "Instant_1") == 0)
                     {
@@ -465,6 +485,7 @@ public class pickup : MonoBehaviour
                         }
                         Instant_1 = GameObject.Find(item_name);
                         Instant_1.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
                     else if (string.Compare(item_name.Substring(0, 9), "Instant_2") == 0)
                     {
@@ -483,6 +504,7 @@ public class pickup : MonoBehaviour
                         }
                         Instant_2 = GameObject.Find(item_name);
                         Instant_2.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 5;
                     }
                     else if (string.Compare(item_name.Substring(0, 5), "Spoon") == 0)
                     {
@@ -500,6 +522,7 @@ public class pickup : MonoBehaviour
                         }
                         Spoon = GameObject.Find(item_name);
                         Spoon.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 3;
                     }
                     else if (string.Compare(item_name.Substring(0, 5), "Plate") == 0)
                     {
@@ -517,6 +540,7 @@ public class pickup : MonoBehaviour
                         }
                         Plate = GameObject.Find(item_name);
                         Plate.transform.position = new Vector3(987, 647, -1317);
+                        invScript.total_weight += 1;
                     }
 
 
@@ -563,7 +587,9 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 10;
                     }
+                    
 
                     //병 (2)
                     else if (string.Compare(item_name.Substring(7), "Bottle_2") == 0)
@@ -599,6 +625,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 10;
                     }
 
                     //병 (3)
@@ -635,6 +662,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 10;
                     }
 
                     else if (string.Compare(item_name.Substring(7), "Medkit") == 0)
@@ -670,6 +698,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 20;
                     }
 
 
@@ -708,6 +737,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
 
                     else if (string.Compare(item_name.Substring(7), "Candy_Bar_2") == 0)
@@ -743,6 +773,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
 
                     else if (string.Compare(item_name.Substring(7), "Candy_Bar_3") == 0)
@@ -778,6 +809,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
 
                     else if (string.Compare(item_name.Substring(7), "Towel") == 0)
@@ -813,6 +845,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 3;
                     }
 
                     else if (string.Compare(item_name.Substring(7), "Can_1") == 0)
@@ -848,6 +881,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
                     else if (string.Compare(item_name.Substring(7), "Can_2") == 0)
                     {
@@ -882,6 +916,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
                     else if (string.Compare(item_name.Substring(7), "Can_3") == 0)
                     {
@@ -916,6 +951,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
                     else if (string.Compare(item_name.Substring(7), "Clothes") == 0)
                     {
@@ -950,6 +986,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
                     else if (string.Compare(item_name.Substring(7), "Cereal_1") == 0)
                     {
@@ -984,6 +1021,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
                     else if (string.Compare(item_name.Substring(7), "Cereal_2") == 0)
                     {
@@ -1018,6 +1056,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
                     else if (string.Compare(item_name.Substring(7), "Cup") == 0)
                     {
@@ -1052,6 +1091,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 1;
                     }
                     else if (string.Compare(item_name.Substring(7), "Flashlight") == 0)
                     {
@@ -1086,6 +1126,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
                     else if (string.Compare(item_name.Substring(7), "Knife") == 0)
                     {
@@ -1120,6 +1161,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 3;
                     }
                     else if (string.Compare(item_name.Substring(7), "Toiletpaper") == 0)
                     {
@@ -1154,6 +1196,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 1;
                     }
                     else if (string.Compare(item_name.Substring(7), "Bed_sheets") == 0)
                     {
@@ -1188,6 +1231,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 10;
                     }
                     else if (string.Compare(item_name.Substring(7), "Lighter") == 0)
                     {
@@ -1222,6 +1266,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 1;
                     }
                     else if (string.Compare(item_name.Substring(7), "Instant_1") == 0)
                     {
@@ -1256,6 +1301,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
                     else if (string.Compare(item_name.Substring(7), "Instant_2") == 0)
                     {
@@ -1290,6 +1336,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 5;
                     }
                     else if (string.Compare(item_name.Substring(7), "Spoon") == 0)
                     {
@@ -1324,6 +1371,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 3;
                     }
                     else if (string.Compare(item_name.Substring(7), "Plate") == 0)
                     {
@@ -1358,6 +1406,7 @@ public class pickup : MonoBehaviour
 
                         ob_list[list_num].transform.position = new Vector3(player_place.x, player_place.y, player_place.z + 1);
                         ob_list[list_num].SetActive(true);
+                        invScript.total_weight -= 1;
                     }
 
 

@@ -14,6 +14,8 @@ public class inventory : MonoBehaviour
     private Vector3 player_posi;
     private Rigidbody rb;
 
+    public int total_weight;
+
 
     ///물ㄹ건들 
     public GameObject Bottle_1;
@@ -49,8 +51,9 @@ public class inventory : MonoBehaviour
         movement = player.GetComponent<move>();
         pick = player.GetComponent<pickup>();
         rb = player.GetComponent<Rigidbody>();
+        total_weight = 0;
 
-
+        
     }
 
     // Update is called once per frame

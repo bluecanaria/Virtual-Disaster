@@ -29,6 +29,12 @@ TagManager:
   - Instant_2
   - Spoon
   - Plate
+  - Apple
+  - Milk
+  - Wine
+  - Banana
+  - Soda
+  - Cuttingboard
   layers:
   - Default
   - TransparentFX
