@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class gazeRegular : MonoBehaviour {
-    public GameObject player;
+    private GameObject player;
     pickup forPickup;
 
     private void Awake()
     {
+        player = GameObject.Find("Player");
+
         forPickup = player.GetComponent<pickup>();
         //gazedAt = false;
     }
