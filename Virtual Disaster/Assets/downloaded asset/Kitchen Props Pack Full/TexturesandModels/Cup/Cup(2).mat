@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Cup(2)
-  m_Shader: {fileID: 4800000, guid: adb1747a732ce2a42825fc58d1d47fd6, type: 3}
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -69,7 +69,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 0
-    - _Outline: 1.13
+    - _Outline: 0.102
     - _OutlineWidth: 0.002
     - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
