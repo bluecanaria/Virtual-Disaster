@@ -7,12 +7,16 @@ public class inventory : MonoBehaviour
 
     public GameObject invLight;
     public GameObject player;
+    public GameObject GvrReticle;
     move movement;
     pickup pick;
+    GvrReticlePointer point;
 
     private bool inven;
     private Vector3 player_posi;
     private Rigidbody rb;
+
+    public int total_weight;
 
 
     ///물ㄹ건들 
@@ -41,6 +45,25 @@ public class inventory : MonoBehaviour
     public GameObject Spoon;
     public GameObject Plate;
 
+    //페이크 물건들
+    public GameObject Apple;
+    public GameObject Banana;
+    public GameObject Blueprints;
+    public GameObject Calculator;
+    public GameObject Chem_Mol;
+    public GameObject Chemi_Prop_1;
+    public GameObject Chemi_Prop_2;
+    public GameObject Cuttingboard;
+    public GameObject Globe;
+    public GameObject Keyboard;
+    public GameObject Milk;
+    public GameObject Mouse;
+    public GameObject Notebook;
+    public GameObject Paper;
+    public GameObject Pencil;
+    public GameObject Soda;
+    public GameObject Toilet_Brush;
+
     // Use this for initialization
     private void Awake()
     {
@@ -49,6 +72,9 @@ public class inventory : MonoBehaviour
         movement = player.GetComponent<move>();
         pick = player.GetComponent<pickup>();
         rb = player.GetComponent<Rigidbody>();
+        point = GvrReticle.GetComponent<GvrReticlePointer>();
+
+        total_weight = 0;
 
 
     }
@@ -72,6 +98,8 @@ public class inventory : MonoBehaviour
                 pick.player_place = player_posi;
                 player.transform.position = new Vector3(960, 650, -1318);
 
+                point.maxReticleDistance = 6;
+
 
 
                 
@@ -91,7 +119,7 @@ public class inventory : MonoBehaviour
                 rb.useGravity = true;
                 player.transform.position = player_posi;
 
-
+                point.maxReticleDistance = 3;
 
                 inven = false;
 

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class gazeRegular : MonoBehaviour {
-    public GameObject player;
+    private GameObject player;
     pickup forPickup;
+
+    int x; //material array 길이 저장 
 
     private void Awake()
     {
+        player = GameObject.Find("Player");
+
         forPickup = player.GetComponent<pickup>();
         //gazedAt = false;
     }
@@ -19,7 +23,13 @@ public class gazeRegular : MonoBehaviour {
         forPickup.item_name = gameObject.name;
 
         //gameObject.GetComponent<MeshRenderer>().material.shader = Shader.Find("Outlined/Uniform");
-        gameObject.GetComponent<MeshRenderer>().material.shader = Shader.Find("Outlined/Regular");
+        x = gameObject.GetComponent<MeshRenderer>().materials.Length;
+
+        for (int i = 0; i < x; i++)
+        {
+            gameObject.GetComponent<MeshRenderer>().materials[i].shader = Shader.Find("Outlined/Regular");
+        }
+
     }
 
     public void onPointerExit()
@@ -28,6 +38,11 @@ public class gazeRegular : MonoBehaviour {
         forPickup.ableto_pick = false;
         forPickup.item_name = null;
 
-        gameObject.GetComponent<MeshRenderer>().material.shader = Shader.Find("Standard");
+        //gameObject.GetComponent<MeshRenderer>().material.shader = Shader.Find("Standard");
+       
+        for (int i = 0; i < x; i++)
+        {
+            gameObject.GetComponent<MeshRenderer>().materials[i].shader = Shader.Find("Standard");
+        }
     }
 }

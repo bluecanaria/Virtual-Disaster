@@ -7,13 +7,16 @@ public class gazeUniform : MonoBehaviour {
 
     // private bool gazedAt ;
 
-    public GameObject player;
+    private GameObject player;
     pickup forPickup;
 
     private void Awake()
     {
+        player = GameObject.Find("Player");
+        
         forPickup = player.GetComponent<pickup>();
         //gazedAt = false;
+        
     }
 
     public void onPointerEnter()

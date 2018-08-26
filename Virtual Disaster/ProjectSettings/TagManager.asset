@@ -29,6 +29,26 @@ TagManager:
   - Instant_2
   - Spoon
   - Plate
+  - Apple
+  - Milk
+  - Wine
+  - Banana
+  - Soda
+  - Cuttingboard
+  - Chair
+  - Chemi_Prop_1
+  - Chemi_Prop_2
+  - Chem_Mol
+  - Paper
+  - Pencil
+  - Blueprints
+  - Globe
+  - Mouse
+  - Keyboard
+  - Notebook
+  - Calculator
+  - Trash_Box
+  - Toilet_Brush
   layers:
   - Default
   - TransparentFX
