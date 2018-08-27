@@ -9,22 +9,22 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1167871226271384}
+  m_RootGameObject: {fileID: 1773266841576750}
   m_IsPrefabAsset: 1
---- !u!1 &1167871226271384
+--- !u!1 &1773266841576750
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4863437460903966}
-  - component: {fileID: 33290433787874628}
-  - component: {fileID: 23685393166607518}
-  - component: {fileID: 64509860882348440}
-  - component: {fileID: 54684800139916486}
-  - component: {fileID: 114359956865401166}
-  - component: {fileID: 114221835317280594}
+  - component: {fileID: 4661856595755814}
+  - component: {fileID: 33786891972357236}
+  - component: {fileID: 23543638182780472}
+  - component: {fileID: 64463668002121056}
+  - component: {fileID: 54165023509325510}
+  - component: {fileID: 114751572123724136}
+  - component: {fileID: 114612938261609096}
   m_Layer: 0
   m_Name: Chemi_Prop_1_ (1)
   m_TagString: Chemi_Prop_1
@@ -32,12 +32,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4863437460903966
+--- !u!4 &4661856595755814
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1167871226271384}
+  m_GameObject: {fileID: 1773266841576750}
   m_LocalRotation: {x: 0.00000008146034, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: -47.524345, y: 0.81127447, z: 27.79515}
   m_LocalScale: {x: 10, y: 10, z: 10}
@@ -45,12 +45,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23685393166607518
+--- !u!23 &23543638182780472
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1167871226271384}
+  m_GameObject: {fileID: 1773266841576750}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -80,19 +80,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33290433787874628
+--- !u!33 &33786891972357236
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1167871226271384}
+  m_GameObject: {fileID: 1773266841576750}
   m_Mesh: {fileID: 4300000, guid: f9adeee777f93194d9e2f7834fa35f87, type: 3}
---- !u!54 &54684800139916486
+--- !u!54 &54165023509325510
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1167871226271384}
+  m_GameObject: {fileID: 1773266841576750}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -102,12 +102,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64509860882348440
+--- !u!64 &64463668002121056
 MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1167871226271384}
+  m_GameObject: {fileID: 1773266841576750}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -116,12 +116,12 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f9adeee777f93194d9e2f7834fa35f87, type: 3}
---- !u!114 &114221835317280594
+--- !u!114 &114612938261609096
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1167871226271384}
+  m_GameObject: {fileID: 1773266841576750}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -132,7 +132,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114359956865401166}
+        - m_Target: {fileID: 114751572123724136}
           m_MethodName: onPointerEnter
           m_Mode: 1
           m_Arguments:
@@ -149,7 +149,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114359956865401166}
+        - m_Target: {fileID: 114751572123724136}
           m_MethodName: onPointerExit
           m_Mode: 1
           m_Arguments:
@@ -163,12 +163,12 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114359956865401166
+--- !u!114 &114751572123724136
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1167871226271384}
+  m_GameObject: {fileID: 1773266841576750}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3885a53890ab9ef4c9d148889e09a860, type: 3}

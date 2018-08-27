@@ -9,22 +9,22 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1647004412783864}
+  m_RootGameObject: {fileID: 1395046819838638}
   m_IsPrefabAsset: 1
---- !u!1 &1647004412783864
+--- !u!1 &1395046819838638
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4267849528410194}
-  - component: {fileID: 33170981267162004}
-  - component: {fileID: 23081776327725330}
-  - component: {fileID: 54137100261502098}
-  - component: {fileID: 64049351205802990}
-  - component: {fileID: 114394737475008128}
-  - component: {fileID: 114007750256800302}
+  - component: {fileID: 4509714228188444}
+  - component: {fileID: 33152635005498836}
+  - component: {fileID: 23813006233205318}
+  - component: {fileID: 54558627930041680}
+  - component: {fileID: 64257736499006150}
+  - component: {fileID: 114759308365511332}
+  - component: {fileID: 114433234297744372}
   m_Layer: 0
   m_Name: Globe_____ (1)
   m_TagString: Globe
@@ -32,12 +32,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4267849528410194
+--- !u!4 &4509714228188444
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647004412783864}
+  m_GameObject: {fileID: 1395046819838638}
   m_LocalRotation: {x: -0.35693687, y: -0.6104065, z: -0.6104065, w: 0.35693687}
   m_LocalPosition: {x: -47.584, y: 0.808, z: 27.955}
   m_LocalScale: {x: 2.48995, y: 2.48995, z: 2.48995}
@@ -45,12 +45,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23081776327725330
+--- !u!23 &23813006233205318
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647004412783864}
+  m_GameObject: {fileID: 1395046819838638}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -81,19 +81,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33170981267162004
+--- !u!33 &33152635005498836
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647004412783864}
+  m_GameObject: {fileID: 1395046819838638}
   m_Mesh: {fileID: 4300000, guid: a1c4546d3432807459bd60795a1b2024, type: 3}
---- !u!54 &54137100261502098
+--- !u!54 &54558627930041680
 Rigidbody:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647004412783864}
+  m_GameObject: {fileID: 1395046819838638}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -103,12 +103,12 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64049351205802990
+--- !u!64 &64257736499006150
 MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647004412783864}
+  m_GameObject: {fileID: 1395046819838638}
   m_Material: {fileID: 13400000, guid: 69745ff0969cd3e418c9c0e0953b2001, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -117,12 +117,12 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: a1c4546d3432807459bd60795a1b2024, type: 3}
---- !u!114 &114007750256800302
+--- !u!114 &114433234297744372
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647004412783864}
+  m_GameObject: {fileID: 1395046819838638}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -133,7 +133,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114394737475008128}
+        - m_Target: {fileID: 114759308365511332}
           m_MethodName: onPointerEnter
           m_Mode: 1
           m_Arguments:
@@ -150,7 +150,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114394737475008128}
+        - m_Target: {fileID: 114759308365511332}
           m_MethodName: onPointerExit
           m_Mode: 1
           m_Arguments:
@@ -164,12 +164,12 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
---- !u!114 &114394737475008128
+--- !u!114 &114759308365511332
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1647004412783864}
+  m_GameObject: {fileID: 1395046819838638}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3885a53890ab9ef4c9d148889e09a860, type: 3}
