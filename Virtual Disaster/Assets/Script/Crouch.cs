@@ -13,10 +13,9 @@ public class Crouch : MonoBehaviour
     float standHeight = 2.5f;
     float crouchHeight = 1.5f;
     float smooth = 0;
-    bool isCrouched;
+    public bool isCrouched;
     GameObject cubeCamera;
     Transform stand;
-    public float DegreesPerSecond = 1f; // degrees per second
     private Vector3 currentRot, targetRot;
     private bool rotating = false;
     move movement;
@@ -37,7 +36,7 @@ public class Crouch : MonoBehaviour
     void Update()
     {
         //Fire1은 컨트롤러의 x버튼이다
-        if(Input.GetButtonUp("Fire1") && isCrouched)
+        if(Input.GetButtonUp("Jump") && isCrouched)
         {
             if(!uimanager.defaultUI.activeSelf)
             {
@@ -86,7 +85,7 @@ public class Crouch : MonoBehaviour
                 uimanager.evacUI_2.SetActive(true);
             }
             //ctrl를 누르면 수그린다
-            if (Input.GetButtonUp("Fire1") && !isCrouched)
+            if (Input.GetButtonUp("Jump") && !isCrouched)
             {
                 uimanager.evacUI_2.SetActive(false);
                 uimanager.evacUI_1.SetActive(true);

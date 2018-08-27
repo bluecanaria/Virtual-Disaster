@@ -12,6 +12,9 @@ public class inventory : MonoBehaviour
     pickup pick;
     GvrReticlePointer point;
 
+    //예진//
+    Crouch crouch;
+
     private bool inven;
     private Vector3 player_posi;
     private Rigidbody rb;
@@ -70,6 +73,10 @@ public class inventory : MonoBehaviour
         inven = false;
         invLight.SetActive(false);
         movement = player.GetComponent<move>();
+
+        //예진//
+        crouch = player.GetComponent<Crouch>();
+
         pick = player.GetComponent<pickup>();
         rb = player.GetComponent<Rigidbody>();
         point = GvrReticle.GetComponent<GvrReticlePointer>();
@@ -123,7 +130,12 @@ public class inventory : MonoBehaviour
 
                 inven = false;
 
-                movement.disable_move = true;
+                //예진//플레이어가 숙인상태가 아니라면 다시 움직여도 된다
+                if(!crouch.isCrouched)
+                {
+                    movement.disable_move = true;
+                }
+                
 
             }
         }
