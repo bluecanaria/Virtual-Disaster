@@ -16,8 +16,10 @@ public class AudioManager : MonoBehaviour {
 
     public void Start()
     {
-        BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume");
-        SoundSlider.value = PlayerPrefs.GetFloat("SoundVolume");
+        PlayerPrefs.SetFloat("BGMVolume", 1);
+        PlayerPrefs.SetFloat("SoundVolume", 1);
+        //BGMSlider.value = PlayerPrefs.GetFloat("BGMVolume");
+        //SoundSlider.value = PlayerPrefs.GetFloat("SoundVolume");
     }
 
     public void setBGMVolume(float vol)
