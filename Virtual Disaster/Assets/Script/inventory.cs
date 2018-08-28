@@ -14,8 +14,10 @@ public class inventory : MonoBehaviour
 
     //예진//
     Crouch crouch;
+    public bool inven;
+    GameObject cubeCamera;
 
-    private bool inven;
+    //private bool inven;
     private Vector3 player_posi;
     private Rigidbody rb;
 
@@ -76,6 +78,7 @@ public class inventory : MonoBehaviour
 
         //예진//
         crouch = player.GetComponent<Crouch>();
+        cubeCamera = player.transform.GetChild(0).gameObject;
 
         pick = player.GetComponent<pickup>();
         rb = player.GetComponent<Rigidbody>();
@@ -93,6 +96,13 @@ public class inventory : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) {
             if (inven == false)
             {
+                
+                //예진// 초점이 켜져있지않다면 다시 킨다
+                if (!point.enabled)
+                {
+                    point.enabled = true;
+                }
+
                 invLight.SetActive(true);
                 inven = true;
                 pick.pick = false;
@@ -121,20 +131,45 @@ public class inventory : MonoBehaviour
                 invLight.SetActive(false);
                 pick.pick = true;
 
-                player.transform.rotation = Quaternion.Euler(0,0,0);
+                player.transform.rotation = Quaternion.Euler(0, 0, 0);
 
                 rb.useGravity = true;
-                player.transform.position = player_posi;
+                //player.transform.position = player_posi;
+                //예진//플레이어가 숙인상태가 아니라면 다시 움직여도 된다
+                if (!crouch.isCrouched)
+                {
+                    movement.disable_move = true;
+                    player.transform.position = player_posi;
+                }
+                //플레이어가 아직 숙인상태라면 다시 초점을 끈다
+                else if(crouch.isCrouched)
+                {
+                    point.enabled = false;
+                    //cubeCamera.transform.position = crouch.crouchPos;
+                    player.transform.position = player_posi;
+                    //예진//플레이어 머리에 달린 카메라도 원래 위치로 돌아가게 한다
+                    //Debug.Log(crouch.crouchPos);
+                    cubeCamera.transform.position = crouch.crouchPos;
+                    
+                    //player.transform.position = player_posi;
+
+                }
+
+                //invLight.SetActive(false);
+                //pick.pick = true;
+
+                //player.transform.rotation = Quaternion.Euler(0,0,0);
+
+                //rb.useGravity = true;
+                //player.transform.position = player_posi;
+                ////예진//플레이어 머리에 달린 카메라도 원래 위치로 돌아가게 한다
+                //cubeCamera.transform.position = crouch.crouchPos;
 
                 point.maxReticleDistance = 3;
 
                 inven = false;
 
-                //예진//플레이어가 숙인상태가 아니라면 다시 움직여도 된다
-                if(!crouch.isCrouched)
-                {
-                    movement.disable_move = true;
-                }
+
                 
 
             }

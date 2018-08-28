@@ -11,7 +11,7 @@ public class Crouch : MonoBehaviour
     //CapsuleCollider crouchCollider;
     GameObject player;
     float standHeight = 2.5f;
-    float crouchHeight = 1.5f;
+    float crouchHeight;
     float smooth = 0;
     public bool isCrouched;
     GameObject cubeCamera;
@@ -20,6 +20,10 @@ public class Crouch : MonoBehaviour
     private bool rotating = false;
     move movement;
     UIManager uimanager;
+    GvrReticlePointer pointer;
+    public GameObject Inventory;
+    public Vector3 crouchPos;
+     
 
 
     private void Start()
@@ -27,6 +31,7 @@ public class Crouch : MonoBehaviour
         uimanager = GameObject.Find("UI_System").GetComponent<UIManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         cubeCamera = player.transform.GetChild(0).gameObject;
+        pointer = cubeCamera.transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<GvrReticlePointer>();
         isCrouched = false;
         currentRot = transform.eulerAngles; //플레이어가 바라보는 각도
         movement = player.GetComponent<move>();
@@ -35,8 +40,8 @@ public class Crouch : MonoBehaviour
 
     void Update()
     {
-        //Fire1은 컨트롤러의 x버튼이다
-        if(Input.GetButtonUp("Jump") && isCrouched)
+        //Fire1은 컨트롤러의 x버튼이다, 다시 일어선다
+        if(Input.GetButtonUp("Fire1") && isCrouched && !Inventory.GetComponent<inventory>().inven)
         {
             if(!uimanager.defaultUI.activeSelf)
             {
@@ -47,29 +52,11 @@ public class Crouch : MonoBehaviour
             cubeCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.4f , player.transform.position.z);
             isCrouched = false;
             movement.disable_move = true;
+            pointer.enabled = true;
+            //pointer.OnPointerExit(player);
         }
     }
 
-    //private void OnCollisionEnter(Collision other)
-    //{
-    //    if(other.gameObject.tag == "table")
-    //    {
-    //    Vector3 direction = other.transform.position - player.transform.position;
-    //    if (Vector3.Dot(transform.forward, direction) > 0)
-    //    {
-    //        print("Back");
-    //    }
-    //    if (Vector3.Dot(transform.forward, direction) < 0)
-    //    {
-    //        print("Front");
-    //    }
-    //    if (Vector3.Dot(transform.forward, direction) == 0)
-    //    {
-    //        print("Side");
-    //    }
-    //    }
-
-    //}
 
     //List<string> contacts = new List<string>();
     private void OnCollisionStay(Collision collision)
@@ -85,10 +72,12 @@ public class Crouch : MonoBehaviour
                 uimanager.evacUI_2.SetActive(true);
             }
             //ctrl를 누르면 수그린다
-            if (Input.GetButtonUp("Jump") && !isCrouched)
+            if (Input.GetButtonUp("Fire1") && !isCrouched && !Inventory.GetComponent<inventory>().inven)
             {
                 uimanager.evacUI_2.SetActive(false);
                 uimanager.evacUI_1.SetActive(true);
+
+                pointer.enabled = false;
 
                 //플레이어 못 움직이게 한다
                 movement.disable_move = false;
@@ -97,9 +86,9 @@ public class Crouch : MonoBehaviour
                 stand.position = cubeCamera.transform.position;
                 //플레이어의 카메라를 수그린것처럼 이동
                 cubeCamera.transform.position = new Vector3(collision.gameObject.transform.position.x, player.transform.position.y - 0.3f, collision.gameObject.transform.position.z);
-                //cubeCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 0.3f, player.transform.position.z + 0.5f);
-                //cubeCamera.transform.position = new Vector3(player.transform.position.x+0.5f, player.transform.position.y - 0.3f, player.transform.position.z ); 
-                //cubeCamera.transform.position += transform.right * 0.8f;
+                crouchHeight = player.transform.position.y - 0.3f;
+                crouchPos = new Vector3(collision.gameObject.transform.position.x, player.transform.position.y - 0.3f, collision.gameObject.transform.position.z);
+
                 //회전하는 코루틴 함수 부른다
                 StartCoroutine("Rotate");
 
@@ -113,12 +102,12 @@ public class Crouch : MonoBehaviour
     //회전하는 코루틴 함수
     IEnumerator Rotate()
     {
-        Quaternion startRot = transform.rotation;
+        Quaternion startRot = cubeCamera.transform.rotation;
         float t = 0.0f;
         while (t < 1f)
         {
             t += Time.deltaTime;
-            cubeCamera.transform.rotation = startRot * Quaternion.AngleAxis(t / 1f * 180f, transform.up); //or transform.right if you want it to be locally based
+            cubeCamera.transform.rotation = startRot * Quaternion.AngleAxis(t / 1.5f * 180f, transform.up); //or transform.right if you want it to be locally based
             yield return null;
         }
         isCrouched = true;

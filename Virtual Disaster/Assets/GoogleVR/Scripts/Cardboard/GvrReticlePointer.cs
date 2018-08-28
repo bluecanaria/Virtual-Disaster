@@ -68,15 +68,28 @@ public class GvrReticlePointer : GvrBasePointer {
   public override float MaxPointerDistance { get { return maxReticleDistance; } }
 
   public override void OnPointerEnter(RaycastResult raycastResultResult, bool isInteractive) {
-    SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
-  }
+        //Debug.Log(raycastResultResult.gameObject.name);
+        SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
+        //if (raycastResultResult.gameObject.tag != "Player")
+        //{
+        //    SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
+        //}
+    }
 
   public override void OnPointerHover(RaycastResult raycastResultResult, bool isInteractive) {
-    SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
-  }
+
+        //if(raycastResultResult.gameObject.tag != "Player")
+        //{
+        //    Debug.Log(raycastResultResult.gameObject.name);
+        //    SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
+        //}
+        //Debug.Log("hover "+raycastResultResult.gameObject.name);
+        SetPointerTarget(raycastResultResult.worldPosition, isInteractive);
+    }
 
   public override void OnPointerExit(GameObject previousObject) {
-    ReticleDistanceInMeters = maxReticleDistance;
+        //Debug.Log("exit "+previousObject.name);
+        ReticleDistanceInMeters = maxReticleDistance;
     ReticleInnerAngle = RETICLE_MIN_INNER_ANGLE;
     ReticleOuterAngle = RETICLE_MIN_OUTER_ANGLE;
   }
@@ -215,4 +228,24 @@ public class GvrReticlePointer : GvrBasePointer {
     mesh.Optimize();
 #endif  // !UNITY_5_5_OR_NEWER
   }
+
+    //disable되는순간 초점을 원래크기로 초기화한다
+    private void OnDisable()
+    {
+        ReticleInnerAngle = RETICLE_MIN_INNER_ANGLE;
+        ReticleOuterAngle = RETICLE_MIN_OUTER_ANGLE;
+
+        float inner_half_angle_radians = Mathf.Deg2Rad * ReticleInnerAngle * 0.5f;
+        float outer_half_angle_radians = Mathf.Deg2Rad * ReticleOuterAngle * 0.5f;
+
+        float inner_diameter = 2.0f * Mathf.Tan(inner_half_angle_radians);
+        float outer_diameter = 2.0f * Mathf.Tan(outer_half_angle_radians);
+
+        ReticleInnerDiameter = inner_diameter;
+        ReticleOuterDiameter = outer_diameter;
+
+        MaterialComp.SetFloat("_InnerDiameter", ReticleInnerDiameter * ReticleDistanceInMeters);
+        MaterialComp.SetFloat("_OuterDiameter", ReticleOuterDiameter * ReticleDistanceInMeters);
+        MaterialComp.SetFloat("_DistanceInMeters", ReticleDistanceInMeters);
+    }
 }
