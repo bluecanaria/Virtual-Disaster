@@ -10,7 +10,7 @@ public class MenuBack : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetButtonUp("Fire1"))
         {
             Title.SetActive(true);
             ThisMenu.SetActive(false);
