@@ -11,6 +11,7 @@ public class move : MonoBehaviour {
     private Vector3 pos;
     private Vector3 pos2;
     public bool disable_move;
+    public GameObject Inventory;
 
     private Rigidbody rb;
     private Transform vrCamera;
