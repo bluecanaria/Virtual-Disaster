@@ -70,7 +70,7 @@ public class Tutorial : MonoBehaviour {
 
     void Tutorial_next()
     {
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetButtonUp("Jump"))
         {
             prevent.SetActive(false);
             nextevent.SetActive(true);
@@ -112,7 +112,7 @@ public class Tutorial : MonoBehaviour {
 
         if (player.transform.position.y > 30)
         {
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetButtonUp("Jump"))
             {
                 prevent.SetActive(false);
                 nextevent.SetActive(true);

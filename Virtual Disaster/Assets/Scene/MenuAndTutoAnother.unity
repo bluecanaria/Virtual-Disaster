@@ -1338,7 +1338,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &24230106
 Transform:
@@ -1348,7 +1348,7 @@ Transform:
   m_GameObject: {fileID: 24230104}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 2061870590}
   m_Father: {fileID: 1087302873}
@@ -2064,7 +2064,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 38712058}
-  - component: {fileID: 38712059}
   m_Layer: 0
   m_Name: Ending (1)
   m_TagString: Untagged
@@ -2092,20 +2091,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &38712059
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 38712057}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eb32be3becc6eb4a92417b2abc1ea4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 1
-  locked: {fileID: 2061094072}
-  unlock: {fileID: 503377467}
 --- !u!1 &39662662
 GameObject:
   m_ObjectHideFlags: 0
@@ -4431,7 +4416,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &65083516
 Transform:
@@ -4441,7 +4426,7 @@ Transform:
   m_GameObject: {fileID: 65083514}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 2093637190}
   m_Father: {fileID: 1087302873}
@@ -13762,7 +13747,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &202684899
 Transform:
@@ -13772,7 +13757,7 @@ Transform:
   m_GameObject: {fileID: 202684897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 63124568}
   m_Father: {fileID: 1087302873}
@@ -17107,7 +17092,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &265996200
 Transform:
@@ -17117,7 +17102,7 @@ Transform:
   m_GameObject: {fileID: 265996198}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1557386776}
   m_Father: {fileID: 1087302873}
@@ -22308,6 +22293,8 @@ GameObject:
   m_Component:
   - component: {fileID: 358752892}
   - component: {fileID: 358752893}
+  - component: {fileID: 358752895}
+  - component: {fileID: 358752894}
   m_Layer: 0
   m_Name: BGMSlider
   m_TagString: Untagged
@@ -22378,11 +22365,11 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1861371241}
+      - m_Target: {fileID: 358752894}
         m_MethodName: setBGMVolume
         m_Mode: 0
         m_Arguments:
@@ -22395,6 +22382,66 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Slider+SliderEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &358752894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358752891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00998e96dc2e47a4c8278f99ff1e0a94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThisSlider: {fileID: 358752893}
+  BGMClip: {fileID: 180900274}
+--- !u!114 &358752895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 358752891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 358752894}
+          m_MethodName: onPointerEnter
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 358752894}
+          m_MethodName: onPointerExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &358867811
 GameObject:
   m_ObjectHideFlags: 0
@@ -22934,7 +22981,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &366712084
 Transform:
@@ -22944,7 +22991,7 @@ Transform:
   m_GameObject: {fileID: 366712082}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 780091800}
   m_Father: {fileID: 1087302873}
@@ -23422,7 +23469,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &368402452
 Transform:
@@ -23432,7 +23479,7 @@ Transform:
   m_GameObject: {fileID: 368402450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 201939680}
   m_Father: {fileID: 1087302873}
@@ -27231,7 +27278,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &437885235
 Transform:
@@ -27241,7 +27288,7 @@ Transform:
   m_GameObject: {fileID: 437885233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1414021991}
   m_Father: {fileID: 1087302873}
@@ -27319,7 +27366,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &441378182
 Transform:
@@ -27329,7 +27376,7 @@ Transform:
   m_GameObject: {fileID: 441378180}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1916083633}
   m_Father: {fileID: 1087302873}
@@ -37820,7 +37867,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &642475852
 Transform:
@@ -37830,7 +37877,7 @@ Transform:
   m_GameObject: {fileID: 642475850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1772241744}
   m_Father: {fileID: 1087302873}
@@ -38425,7 +38472,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &656678882
 Transform:
@@ -38435,7 +38482,7 @@ Transform:
   m_GameObject: {fileID: 656678880}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 699571766}
   m_Father: {fileID: 1087302873}
@@ -41078,7 +41125,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &705228670
 Transform:
@@ -41088,7 +41135,7 @@ Transform:
   m_GameObject: {fileID: 705228668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 120945373}
   m_Father: {fileID: 1087302873}
@@ -41102,7 +41149,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 705858806}
-  - component: {fileID: 705858807}
   m_Layer: 0
   m_Name: Ending (2)
   m_TagString: Untagged
@@ -41130,20 +41176,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &705858807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 705858805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eb32be3becc6eb4a92417b2abc1ea4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 2
-  locked: {fileID: 622575236}
-  unlock: {fileID: 530543695}
 --- !u!1 &706270554
 GameObject:
   m_ObjectHideFlags: 0
@@ -49524,7 +49556,7 @@ Transform:
   m_GameObject: {fileID: 860995361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1087302873}
   m_RootOrder: 30
@@ -49553,7 +49585,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 1
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!1 &862574749
 GameObject:
@@ -50689,13 +50721,13 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1861371241}
+      - m_Target: {fileID: 0}
         m_MethodName: setSoundVolume
-        m_Mode: 0
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -51977,7 +52009,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &912732295
 Transform:
@@ -51987,7 +52019,7 @@ Transform:
   m_GameObject: {fileID: 912732293}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1349746579}
   m_Father: {fileID: 1087302873}
@@ -52703,7 +52735,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &925645212
 Transform:
@@ -52713,7 +52745,7 @@ Transform:
   m_GameObject: {fileID: 925645210}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 605056459}
   m_Father: {fileID: 1087302873}
@@ -55917,7 +55949,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &973908065
 Transform:
@@ -55927,7 +55959,7 @@ Transform:
   m_GameObject: {fileID: 973908063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 244528762}
   m_Father: {fileID: 1087302873}
@@ -57347,7 +57379,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &992711160
 Transform:
@@ -57357,7 +57389,7 @@ Transform:
   m_GameObject: {fileID: 992711158}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1649126592}
   m_Father: {fileID: 1087302873}
@@ -57715,7 +57747,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1006773077
 Transform:
@@ -57725,7 +57757,7 @@ Transform:
   m_GameObject: {fileID: 1006773075}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1039378755}
   m_Father: {fileID: 1087302873}
@@ -57779,7 +57811,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebca86ee3baf884f8f4182598fa0820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeTime: 2
   MenuObj: {fileID: 1724626506}
   TitleObj: {fileID: 1076155540}
 --- !u!114 &1007868762
@@ -61012,7 +61043,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1060648490
 Transform:
@@ -61022,7 +61053,7 @@ Transform:
   m_GameObject: {fileID: 1060648488}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 88724342}
   m_Father: {fileID: 1087302873}
@@ -62298,7 +62329,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1083111419
 Transform:
@@ -62308,7 +62339,7 @@ Transform:
   m_GameObject: {fileID: 1083111417}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 2060549129}
   m_Father: {fileID: 1087302873}
@@ -63439,8 +63470,8 @@ RectTransform:
   m_Father: {fileID: 1117640440}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -64609,7 +64640,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1111409733
 Transform:
@@ -64619,7 +64650,7 @@ Transform:
   m_GameObject: {fileID: 1111409731}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1116550500}
   m_Father: {fileID: 1087302873}
@@ -68737,7 +68768,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1191665022
 Transform:
@@ -68747,7 +68778,7 @@ Transform:
   m_GameObject: {fileID: 1191665020}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 803758137}
   m_Father: {fileID: 1087302873}
@@ -69482,7 +69513,7 @@ Transform:
   m_GameObject: {fileID: 1208647595}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1087302873}
   m_RootOrder: 41
@@ -69511,7 +69542,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 1
 --- !u!1 &1209502434
 GameObject:
@@ -73115,7 +73146,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1272255045
 Transform:
@@ -73125,7 +73156,7 @@ Transform:
   m_GameObject: {fileID: 1272255043}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1990859741}
   m_Father: {fileID: 1087302873}
@@ -73227,7 +73258,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -73305,7 +73336,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1275715391
 Transform:
@@ -73315,7 +73346,7 @@ Transform:
   m_GameObject: {fileID: 1275715389}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 909692069}
   m_Father: {fileID: 1087302873}
@@ -73361,7 +73392,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1277104867
 Transform:
@@ -73371,7 +73402,7 @@ Transform:
   m_GameObject: {fileID: 1277104865}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1395266000}
   m_Father: {fileID: 1087302873}
@@ -73511,7 +73542,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1279802671
 Transform:
@@ -73521,7 +73552,7 @@ Transform:
   m_GameObject: {fileID: 1279802669}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 824872207}
   m_Father: {fileID: 1087302873}
@@ -73551,7 +73582,7 @@ Transform:
   m_GameObject: {fileID: 1282810635}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1087302873}
   m_RootOrder: 35
@@ -74212,7 +74243,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebca86ee3baf884f8f4182598fa0820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeTime: 2
   MenuObj: {fileID: 1031565326}
   TitleObj: {fileID: 1076155540}
 --- !u!114 &1291006264
@@ -74336,7 +74366,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1291382720
 Transform:
@@ -74346,7 +74376,7 @@ Transform:
   m_GameObject: {fileID: 1291382718}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 880787274}
   m_Father: {fileID: 1087302873}
@@ -77704,7 +77734,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1374464334}
-  - component: {fileID: 1374464335}
   m_Layer: 0
   m_Name: Ending (3)
   m_TagString: Untagged
@@ -77732,20 +77761,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1374464335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1374464333}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7eb32be3becc6eb4a92417b2abc1ea4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  number: 3
-  locked: {fileID: 637874290}
-  unlock: {fileID: 1044418511}
 --- !u!1 &1374660094
 GameObject:
   m_ObjectHideFlags: 0
@@ -79241,7 +79256,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1401273760
 Transform:
@@ -79251,7 +79266,7 @@ Transform:
   m_GameObject: {fileID: 1401273758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1212656033}
   m_Father: {fileID: 1087302873}
@@ -81172,7 +81187,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1425057846
 Transform:
@@ -81182,7 +81197,7 @@ Transform:
   m_GameObject: {fileID: 1425057844}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 811430472}
   m_Father: {fileID: 1087302873}
@@ -84151,7 +84166,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1504243237
 Transform:
@@ -84161,7 +84176,7 @@ Transform:
   m_GameObject: {fileID: 1504243235}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1669678627}
   m_Father: {fileID: 1087302873}
@@ -85151,7 +85166,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1532633668
 Transform:
@@ -85161,7 +85176,7 @@ Transform:
   m_GameObject: {fileID: 1532633666}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 193121039}
   m_Father: {fileID: 1087302873}
@@ -88356,7 +88371,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1580892003
 Transform:
@@ -88366,7 +88381,7 @@ Transform:
   m_GameObject: {fileID: 1580892001}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 112955510}
   m_Father: {fileID: 1087302873}
@@ -90144,7 +90159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebca86ee3baf884f8f4182598fa0820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeTime: 2
   MenuObj: {fileID: 1693283885}
   TitleObj: {fileID: 1076155540}
 --- !u!114 &1622374806
@@ -90395,7 +90409,7 @@ MonoBehaviour:
   TutoGetItem: 1
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1626739407
 Transform:
@@ -90405,7 +90419,7 @@ Transform:
   m_GameObject: {fileID: 1626739405}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1087302873}
   m_RootOrder: 19
@@ -91098,7 +91112,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1645579751
 Transform:
@@ -91108,7 +91122,7 @@ Transform:
   m_GameObject: {fileID: 1645579749}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 183666330}
   m_Father: {fileID: 1087302873}
@@ -91862,7 +91876,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -94521,8 +94535,8 @@ RectTransform:
   m_Father: {fileID: 739018607}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -97449,7 +97463,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1773959778
 Transform:
@@ -97459,7 +97473,7 @@ Transform:
   m_GameObject: {fileID: 1773959776}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 743227778}
   m_Father: {fileID: 1087302873}
@@ -99263,7 +99277,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1800184700
 Transform:
@@ -99273,7 +99287,7 @@ Transform:
   m_GameObject: {fileID: 1800184698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1283358990}
   m_Father: {fileID: 1087302873}
@@ -100271,7 +100285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebca86ee3baf884f8f4182598fa0820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeTime: 2
   MenuObj: {fileID: 990696239}
   TitleObj: {fileID: 1076155540}
 --- !u!1 &1828382792
@@ -101342,7 +101355,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1861371240}
-  - component: {fileID: 1861371241}
   - component: {fileID: 1861371242}
   m_Layer: 0
   m_Name: AudioManager
@@ -101364,20 +101376,6 @@ Transform:
   m_Father: {fileID: 340588201}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1861371241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1861371239}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00998e96dc2e47a4c8278f99ff1e0a94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BGMSlider: {fileID: 358752893}
-  SoundSlider: {fileID: 884003916}
-  BGMClip: {fileID: 180900274}
 --- !u!81 &1861371242
 AudioListener:
   m_ObjectHideFlags: 0
@@ -101762,6 +101760,29 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1865264155}
   m_CullTransparentMesh: 0
+--- !u!1 &1869198438 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 761381335, guid: 463285ecd6702471a909ba810832bf0e,
+    type: 2}
+  m_PrefabInternal: {fileID: 1252116907}
+--- !u!114 &1869198439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1869198438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
 --- !u!1 &1872475425
 GameObject:
   m_ObjectHideFlags: 0
@@ -104448,7 +104469,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1912813201
 Transform:
@@ -104458,7 +104479,7 @@ Transform:
   m_GameObject: {fileID: 1912813199}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 458802440}
   m_Father: {fileID: 1087302873}
@@ -104815,7 +104836,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1924594581
 Transform:
@@ -104825,7 +104846,7 @@ Transform:
   m_GameObject: {fileID: 1924594579}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1087302873}
   m_RootOrder: 12
@@ -107897,7 +107918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebca86ee3baf884f8f4182598fa0820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeTime: 2
   MenuObj: {fileID: 524915665}
   TitleObj: {fileID: 1464547908}
 --- !u!114 &1979535261
@@ -108021,7 +108041,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 0
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!4 &1979862785
 Transform:
@@ -108031,7 +108051,7 @@ Transform:
   m_GameObject: {fileID: 1979862783}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1279123127}
   m_Father: {fileID: 1087302873}
@@ -109273,7 +109293,7 @@ Transform:
   m_GameObject: {fileID: 2008453961}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 1719716213}
   m_Father: {fileID: 1087302873}
@@ -112150,7 +112170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ebca86ee3baf884f8f4182598fa0820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gazeTime: 2
   MenuObj: {fileID: 340588200}
   TitleObj: {fileID: 1076155540}
 --- !u!114 &2064106038
@@ -116643,7 +116662,7 @@ Transform:
   m_GameObject: {fileID: 2128899215}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1087302873}
   m_RootOrder: 25
@@ -116672,7 +116691,7 @@ MonoBehaviour:
   TutoGetItem: 0
   TutoOpenInven: 1
   TutoDropItem: 0
-  TutoCrouch: 0
+  TutoCrouch: 1
   Tutofinal: 0
 --- !u!1 &2128993782
 GameObject:
