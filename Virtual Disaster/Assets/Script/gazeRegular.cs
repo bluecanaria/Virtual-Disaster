@@ -27,7 +27,7 @@ public class gazeRegular : MonoBehaviour {
 
         for (int i = 0; i < x; i++)
         {
-            gameObject.GetComponent<MeshRenderer>().materials[i].shader = Shader.Find("Outlined/Regular");
+            gameObject.GetComponent<MeshRenderer>().materials[i].shader = Shader.Find("Outlined/Uniform");
         }
 
     }
