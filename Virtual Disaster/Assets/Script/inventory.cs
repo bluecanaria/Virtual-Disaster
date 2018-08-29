@@ -94,9 +94,11 @@ public class inventory : MonoBehaviour
     {
         //인벤토리 켜기 
         if (Input.GetButtonUp("Jump")) {
+
+
             if (inven == false)
             {
-                
+                rb.constraints = RigidbodyConstraints.FreezeAll;
                 //예진// 초점이 켜져있지않다면 다시 킨다
                 if (!point.enabled)
                 {
@@ -128,6 +130,8 @@ public class inventory : MonoBehaviour
             //인벤토리 끄기 
             else
             {
+
+                rb.constraints = RigidbodyConstraints.FreezeRotation;
                 invLight.SetActive(false);
                 pick.pick = true;
 

@@ -8,6 +8,9 @@ public class pickup : MonoBehaviour
     public GameObject EventSystem;
     inventory invScript;
 
+    public GameObject UI_System;
+    UIManager uimanage;
+
     public string item_name; //이름 확인
     public bool ableto_pick; //물건이 gazed at 되어있늨가
 
@@ -166,8 +169,9 @@ public class pickup : MonoBehaviour
         invScript = EventSystem.GetComponent<inventory>();
         pick = true;
         // ableto_pick = false;
+        uimanage = UI_System.GetComponent<UIManager>();
 
-        
+
     }
 
 
@@ -176,7 +180,7 @@ public class pickup : MonoBehaviour
         if (ableto_pick)
         {
             //인벤토리 켜지기 전, 주울 때 
-            if (pick)
+            if (pick && invScript.total_weight < 100 && uimanage.evacUI_2.activeInHierarchy == false&& uimanage.evacUI_1.activeInHierarchy == false)
             { 
                 if (Input.GetButtonUp("Fire1"))
                 {
@@ -1039,7 +1043,7 @@ public class pickup : MonoBehaviour
             }
 
             //인벤토리 켜진 상태, 즉 버릴 때
-            else if (!pick)
+            else if (!pick && invScript.total_weight >0)
             {
 
                 if (Input.GetButtonUp("Fire1"))
@@ -1050,6 +1054,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Bottle_1_num_save == 1)
                         {
+                            Bottle_1_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1075,6 +1080,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Bottle_2_num_save == 1)
                         {
+                            Bottle_2_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1096,6 +1102,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Bottle_3_num_save == 1)
                         {
+                            Bottle_3_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1116,6 +1123,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Medkit_num_save == 1)
                         {
+                            Medkit_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1139,6 +1147,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Candy_Bar_1_num_save == 1)
                         {
+                            Candy_Bar_1_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1159,6 +1168,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Candy_Bar_2_num_save == 1)
                         {
+                            Candy_Bar_2_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1178,6 +1188,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Candy_Bar_3_num_save == 1)
                         {
+                            Candy_Bar_3_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1198,6 +1209,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Towel_num_save == 1)
                         {
+                            Towel_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1218,6 +1230,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Can_1_num_save == 1)
                         {
+                            Can_1_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1238,6 +1251,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Can_2_num_save == 1)
                         {
+                            Can_2_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1259,6 +1273,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Can_3_num_save == 1)
                         {
+                            Can_3_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1280,6 +1295,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Clothes_num_save == 1)
                         {
+                            Clothes_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1301,6 +1317,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Cereal_1_num_save == 1)
                         {
+                            Cereal_1_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1321,6 +1338,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Cereal_2_num_save == 1)
                         {
+                            Cereal_2_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1342,6 +1360,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Cup_num_save == 1)
                         {
+                            Cup_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1363,6 +1382,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Flashlight_num_save == 1)
                         {
+                            Flashlight_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1384,6 +1404,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Knife_num_save == 1)
                         {
+                            Knife_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1404,6 +1425,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Toiletpaper_num_save == 1)
                         {
+                            Toiletpaper_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1425,6 +1447,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Bed_sheets_num_save == 1)
                         {
+                            Bed_sheets_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1446,6 +1469,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Lighter_num_save == 1)
                         {
+                            Lighter_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1467,6 +1491,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Instant_1_num_save == 1)
                         {
+                            Instant_1_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1488,6 +1513,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Instant_2_num_save == 1)
                         {
+                            Instant_2_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1509,6 +1535,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Spoon_num_save == 1)
                         {
+                            Spoon_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1530,6 +1557,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Plate_num_save == 1)
                         {
+                            Plate_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1550,8 +1578,11 @@ public class pickup : MonoBehaviour
                     {
                         if (Apple_num_save == 1)
                         {
-                            GameObject fordestroy = GameObject.Find(item_name);
-                            fordestroy.SetActive(false);
+                            {
+                                Apple_num_save--;
+                                GameObject fordestroy = GameObject.Find(item_name);
+                                fordestroy.SetActive(false);
+                            }
                         }
                         else
                         {
@@ -1570,6 +1601,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Banana_num_save == 1)
                         {
+                            Banana_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1590,6 +1622,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Blueprints_num_save == 1)
                         {
+                            Blueprints_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1610,6 +1643,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Calculator_num_save == 1)
                         {
+                            Calculator_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1630,6 +1664,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Chem_Mol_num_save == 1)
                         {
+                            Chem_Mol_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1650,6 +1685,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Chemi_Prop_1_num_save == 1)
                         {
+                            Chemi_Prop_1_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1670,6 +1706,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Chemi_Prop_2_num_save == 1)
                         {
+                            Chemi_Prop_2_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1690,6 +1727,7 @@ public class pickup : MonoBehaviour
                     {
                         if( Cuttingboard_num_save == 1)
                         {
+                            Cuttingboard_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1710,6 +1748,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Globe_num_save == 1)
                         {
+                            Globe_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1730,6 +1769,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Keyboard_num_save == 1)
                         {
+                            Keyboard_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1750,6 +1790,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Milk_num_save == 1)
                         {
+                            Milk_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1770,6 +1811,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Mouse_num_save == 1)
                         {
+                            Mouse_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1791,6 +1833,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Notebook_num_save == 1)
                         {
+                            Notebook_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1811,6 +1854,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Paper_num_save == 1)
                         {
+                            Paper_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1832,6 +1876,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Pencil_num_save == 1)
                         {
+                            Pencil_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1852,6 +1897,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Soda_num_save == 1)
                         {
+                            Soda_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
@@ -1872,6 +1918,7 @@ public class pickup : MonoBehaviour
                     {
                         if (Toilet_Brush_num_save == 1)
                         {
+                            Toilet_Brush_num_save--;
                             GameObject fordestroy = GameObject.Find(item_name);
                             fordestroy.SetActive(false);
                         }
