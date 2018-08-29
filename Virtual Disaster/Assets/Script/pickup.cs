@@ -178,7 +178,7 @@ public class pickup : MonoBehaviour
             //인벤토리 켜지기 전, 주울 때 
             if (pick)
             { 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetButtonUp("Fire1"))
                 {
 
                     //병 (1)
@@ -1042,7 +1042,7 @@ public class pickup : MonoBehaviour
             else if (!pick)
             {
 
-                if (Input.GetKeyDown(KeyCode.E))
+                if (Input.GetButtonUp("Fire1"))
                 {
 
                     //병 (1)
@@ -1944,8 +1944,70 @@ public class pickup : MonoBehaviour
         ob_list[list_num].SetActive(true);
     }
 
+    //현경: 엔딩용 물건 갯수 받아오는 퍼블릭 함수
 
+    public int GetBottle()
+    {
+        /* private int Bottle_1_num_save = 0;
+     private int Bottle_2_num_save = 0;
+     private int Bottle_3_num_save = 0;
+     private int Medkit_num_save = 0;
+     private int Candy_Bar_1_num_save = 0;
+     private int Candy_Bar_2_num_save = 0;
+     private int Candy_Bar_3_num_save = 0;
+     private int Towel_num_save = 0;
+     private int Can_1_num_save = 0;
+     private int Can_2_num_save = 0;
+     private int Can_3_num_save = 0;
+     private int Clothes_num_save = 0;
+     private int Cereal_1_num_save = 0;
+     private int Cereal_2_num_save = 0;
+     private int Cup_num_save = 0;
+     private int Flashlight_num_save = 0;
+     private int Knife_num_save = 0;
+     private int Toiletpaper_num_save = 0;
+     private int Bed_sheets_num_save = 0;
+     private int Lighter_num_save = 0;
+     private int Instant_1_num_save = 0;
+     private int Instant_2_num_save = 0;
+     private int Spoon_num_save = 0;
+     private int Plate_num_save = 0;
+     */
+        return Bottle_1_num_save + Bottle_2_num_save + Bottle_3_num_save;
+    }
 
+    public int GetMed()
+    {
+        return Medkit_num_save;
+    }
 
+    public int GetFood()
+    {
+        return Candy_Bar_1_num_save + Candy_Bar_2_num_save + Candy_Bar_3_num_save;
+    }
 
+    public int GetTowel()
+    {
+        return Towel_num_save;
+    }
+
+    public int GetTpaper()
+    {
+        return Toiletpaper_num_save;
+    }
+
+    public int GetCutter()
+    {
+        return Knife_num_save;
+    }
+    
+    public int GetFlash()
+    {
+        return Flashlight_num_save;
+    }
+
+    public int GetBlanket()
+    {
+        return Bed_sheets_num_save;
+    }
 }
