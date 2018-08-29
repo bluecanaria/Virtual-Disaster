@@ -93,7 +93,7 @@ public class inventory : MonoBehaviour
     void Update()
     {
         //인벤토리 켜기 
-        if (Input.GetKeyDown(KeyCode.R)) {
+        if (Input.GetButtonUp("Jump")) {
             if (inven == false)
             {
                 
