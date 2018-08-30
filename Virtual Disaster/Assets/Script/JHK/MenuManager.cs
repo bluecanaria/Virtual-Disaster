@@ -5,41 +5,19 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour
 {
 
-    public GameObject Title;
-    public GameObject Menu;
-    public GameObject ThisButton;
-    public GameObject UpButton;
-    public GameObject DownButton;
+    public GameObject Prev;
+    public GameObject Next;
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.R))
-            OpenMenu();
+        if (Input.GetButtonUp("Jump"))
+        {
+            Prev.SetActive(false);
+            Next.SetActive(true);
+        }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-            KeyUp();
-
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-            KeyDown();
     }
 
-    void OpenMenu()
-    {
-        Title.SetActive(false);
-        Menu.SetActive(true);
-    }
-
-    void KeyUp()
-    {
-        ThisButton.SetActive(false);
-        UpButton.SetActive(true);
-    }
-
-    void KeyDown()
-    {
-        ThisButton.SetActive(false);
-        DownButton.SetActive(true);
-    }
 }
