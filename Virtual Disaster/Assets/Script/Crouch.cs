@@ -23,7 +23,9 @@ public class Crouch : MonoBehaviour
     GvrReticlePointer pointer;
     public GameObject Inventory;
     public Vector3 crouchPos;
-     
+    public bool tableCollided;
+    bool defaultUI;
+
 
 
     private void Start()
@@ -35,21 +37,24 @@ public class Crouch : MonoBehaviour
         isCrouched = false;
         currentRot = transform.eulerAngles; //플레이어가 바라보는 각도
         movement = player.GetComponent<move>();
+        tableCollided = false;
+        defaultUI = true;
 
     }
 
     void Update()
     {
         //Fire1은 컨트롤러의 x버튼이다, 다시 일어선다
-        if(Input.GetButtonUp("Fire1") && isCrouched && !Inventory.GetComponent<inventory>().inven)
+        if (Input.GetButtonUp("Fire1") && isCrouched && !Inventory.GetComponent<inventory>().inven)
         {
-            if(!uimanager.defaultUI.activeSelf)
+            //책상과 접해있는 상태라면 책상에 다시 들어갈 수 있다는 ui를 킨다
+            if(tableCollided && !defaultUI)
             {
-                //uimanager.defaultUI.SetActive(true);
                 uimanager.evacUI_1.SetActive(false);
-                uimanager.evacUI_2.SetActive(false);
+                uimanager.evacUI_2.SetActive(true);
             }
-            cubeCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.4f , player.transform.position.z);
+
+            cubeCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.4f, player.transform.position.z);
             isCrouched = false;
             movement.disable_move = true;
             pointer.enabled = true;
@@ -64,18 +69,26 @@ public class Crouch : MonoBehaviour
         if (collision.gameObject.tag == "table")
         //if(contacts.Contains("tabble") && contacts.Contains("Chair"))
         {
-            //default ui를 끈다
-            if (uimanager.defaultUI.activeSelf)
+            //서있는 상태라면 들어갈 수 있다는 ui를 킨다
+            if(!isCrouched && defaultUI)
             {
-                uimanager.defaultUI.SetActive(false);
                 uimanager.evacUI_1.SetActive(false);
                 uimanager.evacUI_2.SetActive(true);
+                defaultUI = false;
             }
+
+            tableCollided = true;
+
             //ctrl를 누르면 수그린다
             if (Input.GetButtonUp("Fire1") && !isCrouched && !Inventory.GetComponent<inventory>().inven)
             {
-                uimanager.evacUI_2.SetActive(false);
-                uimanager.evacUI_1.SetActive(true);
+                //나온다는 ui를 킨다
+                if(!uimanager.evacUI_1.activeSelf)
+                {
+                    uimanager.evacUI_2.SetActive(false);
+                    uimanager.evacUI_1.SetActive(true);
+                }
+
 
                 pointer.enabled = false;
 
@@ -96,12 +109,13 @@ public class Crouch : MonoBehaviour
         }
     }
 
-    
+
 
 
     //회전하는 코루틴 함수
     IEnumerator Rotate()
     {
+        //isCrouched = true;
         Quaternion startRot = cubeCamera.transform.rotation;
         float t = 0.0f;
         while (t < 1f)
@@ -115,15 +129,16 @@ public class Crouch : MonoBehaviour
 
     private void OnCollisionExit(Collision collision)
     {
-        if(collision.gameObject.tag == "table")
+        if (collision.gameObject.tag == "table" && !Inventory.GetComponent<inventory>().inven)
         {
-            uimanager.defaultUI.SetActive(true);
             uimanager.evacUI_1.SetActive(false);
             uimanager.evacUI_2.SetActive(false);
+            tableCollided = false;
+            defaultUI = true;
         }
     }
 
-    
+
 
 
 }
