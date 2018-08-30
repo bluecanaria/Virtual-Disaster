@@ -5,7 +5,7 @@ using UnityEngine;
 public class move : MonoBehaviour {
 
 
-    private int speed = 4;
+    public float speed = 4;
 
     //for movement
     private Vector3 pos;
@@ -21,6 +21,7 @@ public class move : MonoBehaviour {
         disable_move = true;
         rb = GetComponent<Rigidbody>();
         vrCamera= Camera.main.transform; 
+        
     }
 	
 	// Update is called once per frame
@@ -28,7 +29,30 @@ public class move : MonoBehaviour {
         //Vector3 movement= speed * new Vector3(vrCamera.TransformDirection(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical")).x, 0f, vrCamera.TransformDirection(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical")).z);
         //movement.y = rb.velocity.y;
         //rb.velocity = movement;
-
+        if(Inventory.GetComponent<inventory>().total_weight<20)
+        {
+            speed = 4;
+        }
+        else if(Inventory.GetComponent<inventory>().total_weight < 40)
+        {
+            speed = 3.5f;
+        }
+        else if (Inventory.GetComponent<inventory>().total_weight <60)
+        {
+            speed = 3f;
+        }
+        else if (Inventory.GetComponent<inventory>().total_weight < 80)
+        {
+            speed = 2f;
+        }
+        else if (Inventory.GetComponent<inventory>().total_weight < 100)
+        {
+            speed = 1f;
+        }
+        else if (Inventory.GetComponent<inventory>().total_weight >= 100)
+        {
+            speed = 0;
+        }
         //pos = transform.position;
         if (disable_move)
             movePlayer();      
