@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour {
 
+    public int SceneNum;
+
 	// Use this for initialization
 	void Start () {
-        SceneManager.LoadScene("modified_schoolScene");
+        SceneManager.LoadScene(SceneNum);
     }
 	
 }
