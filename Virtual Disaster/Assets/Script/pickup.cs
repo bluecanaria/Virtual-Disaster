@@ -1965,6 +1965,38 @@ public class pickup : MonoBehaviour
             img.sprite = numbers[6];
         else if (num == 9)
             img.sprite = numbers[7];
+        else if (num == 10)
+            img.sprite = numbers[8];
+        else if (num == 11)
+            img.sprite = numbers[9];
+        else if (num == 12)
+            img.sprite = numbers[10];
+        else if (num == 13)
+            img.sprite = numbers[11];
+        else if (num == 14)
+            img.sprite = numbers[12];
+        else if (num == 15)
+            img.sprite = numbers[13];
+        else if (num ==16)
+            img.sprite = numbers[14];
+        else if (num == 17)
+            img.sprite = numbers[15];
+        else if (num == 18)
+            img.sprite = numbers[16];
+        else if (num == 19)
+            img.sprite = numbers[17];
+        else if (num == 20)
+            img.sprite = numbers[18];
+        else if (num == 21)
+            img.sprite = numbers[19];
+        else if (num == 22)
+            img.sprite = numbers[20];
+        else if (num == 23)
+            img.sprite = numbers[21];
+        else if (num == 24)
+            img.sprite = numbers[22];
+        else if (num == 25)
+            img.sprite = numbers[23];
         else
             img.gameObject.SetActive(false);
 
