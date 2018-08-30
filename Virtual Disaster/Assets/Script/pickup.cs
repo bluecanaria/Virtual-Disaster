@@ -2027,7 +2027,7 @@ public class pickup : MonoBehaviour
 
     public int GetBottle()
     {
-        return Bottle_1_num_save + Bottle_2_num_save + Bottle_3_num_save + Can_1_num_save + Can_2_num_save + Can_3_num_save + Cereal_1_num_save + Cereal_2_num_save + Instant_1_num_save + Instant_2_num_save;
+        return Bottle_1_num_save + Bottle_2_num_save + Bottle_3_num_save;
     }
 
     public int GetMed()
@@ -2037,7 +2037,7 @@ public class pickup : MonoBehaviour
 
     public int GetFood()
     {
-        return Candy_Bar_1_num_save + Candy_Bar_2_num_save + Candy_Bar_3_num_save;
+        return Candy_Bar_1_num_save + Candy_Bar_2_num_save + Candy_Bar_3_num_save + Can_1_num_save + Can_2_num_save + Can_3_num_save + Cereal_1_num_save + Cereal_2_num_save + Instant_1_num_save + Instant_2_num_save;
     }
 
     public int GetTowel()

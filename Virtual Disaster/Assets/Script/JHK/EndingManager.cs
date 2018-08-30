@@ -6,6 +6,10 @@ using UnityEngine.UI;
 public class EndingManager : MonoBehaviour {
 
     public GameObject EndingWin;
+    public Text Score1Obj;
+    public Text Score2Obj;
+    public Text Score3Obj;
+
     public GameObject[] EndingResult = new GameObject[24];
 
     // 시간 계산 타이머
@@ -44,6 +48,11 @@ public class EndingManager : MonoBehaviour {
 
     public GameObject EventSys;
 
+
+    //오디오 조절 용
+    public GameObject EmerSound;
+    public GameObject SirenSound;
+
     private void Awake()
     {
         inven = false;
@@ -65,7 +74,7 @@ public class EndingManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        time = 180f;
+        time = 300f;
         timeforScore2 = 0f;
 
         Score_1 = 0;
@@ -83,8 +92,23 @@ public class EndingManager : MonoBehaviour {
         if (time != 0)
         {
             time -= Time.deltaTime;
+
+            if (time <= 60f)
+            {
+                EmerSound.SetActive(true);
+            }
+
+            if (time <= 25f)
+            {
+                SirenSound.SetActive(true);
+            }
+
             if (time <= 0)
             {
+                if(player.GetComponent<Crouch>().isCrouched == false)
+                {
+                    Score_2 -= 30;
+                }
                 time = 0;
                 GotoEnding();
             }
@@ -96,16 +120,16 @@ public class EndingManager : MonoBehaviour {
             GotoEnding();
         }
 
-        if (timeforScore2 != 150f)
+        if (timeforScore2 != 100f)
         {
-            if(player.transform.position.z < 29.3)
+            if(player.transform.position.z < 29.5f && player.transform.position.x < 17f && player.transform.position.x>-41)
             {
                 timeforScore2 += Time.deltaTime;
             }
 
-            if (timeforScore2 >= 150f)
+            if (timeforScore2 >= 100f)
             {
-                timeforScore2 = 150f;
+                timeforScore2 = 100f;
             }
         }
     }
@@ -113,14 +137,12 @@ public class EndingManager : MonoBehaviour {
     private void CountScore()
     {
 
-        Score_2 = 100 - ((int)timeforScore2 - 50);
-        if (Score_2 > 100) Score_2 = 100;
+        Score_2 = 100 - ((int)timeforScore2);
 
         if (player.GetComponent<pickup>().GetBottle() >= 3 && player.GetComponent<pickup>().GetFood() >= 2 && player.GetComponent<pickup>().GetMed() >= 1)
         {
             Score_3_1 = 40;
         }
-        else Score_3_1 = 0;
 
         if (player.GetComponent<pickup>().GetTowel() >= 1) Score_3_2 += 15;
         if (player.GetComponent<pickup>().GetTpaper() >= 1) Score_3_2 += 15;
@@ -134,6 +156,14 @@ public class EndingManager : MonoBehaviour {
         Score_3_3 += player.GetComponent<pickup>().GetSpoon() * 2;
 
         if (Score_3_3 >= 30) Score_3_3 = 30;
+
+        Score_3 = Score_3_1 + Score_3_2 + Score_3_3;
+
+        if (Score_2 > 100) Score_2 = 100;
+        if (Score_2 < 0) Score_2 = 0;
+
+        if (Score_3 > 100) Score_3 = 100;
+
     }
 
     private void EndingCheck()
@@ -180,15 +210,30 @@ public class EndingManager : MonoBehaviour {
             EndingResult[6].SetActive(true);
         }
 
-        if (Score_1 == 100 && Score_2 < 50 && Score_3_1 == 40 && Score_3_2 == 30 && Score_3_3 >= 15)
+        if (Score_1 == 100 && Score_2 > 50 && Score_3_1 == 40 && Score_3_2 == 30 && Score_3_3 >= 15)
         {
-            PlayerPrefs.SetInt("End8", 1);
-            EndingResult[7].SetActive(true);
+            if(Score_2 != 100 && Score_3 !=100)
+            {
+                PlayerPrefs.SetInt("End8", 1);
+                EndingResult[7].SetActive(true);
+            }
+
+            if (Score_2 == 100 && Score_3 != 100)
+            {
+                PlayerPrefs.SetInt("End8", 1);
+                EndingResult[7].SetActive(true);
+            }
+
+            if (Score_2 != 100 && Score_3 == 100)
+            {
+                PlayerPrefs.SetInt("End8", 1);
+                EndingResult[7].SetActive(true);
+            }
         }
 
         if(Score_1 == 0 && player.GetComponent<Crouch>().isCrouched == false && Score_2<50)
         {
-            if (Score_3_1 == 0)
+            if (Score_3_1 == 0 && Score_2 != 0)
             {
                 PlayerPrefs.SetInt("End9", 1);
                 EndingResult[8].SetActive(true);
@@ -316,6 +361,9 @@ public class EndingManager : MonoBehaviour {
 
         CountScore();
         EndingCheck();
+        Score1Obj.text = Score_1.ToString();
+        Score2Obj.text = Score_2.ToString();
+        Score3Obj.text = Score_3.ToString();
 
         rb.constraints = RigidbodyConstraints.FreezeAll;
         //예진// 초점이 켜져있지않다면 다시 킨다

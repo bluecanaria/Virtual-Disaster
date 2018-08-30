@@ -35,19 +35,19 @@ public class move : MonoBehaviour {
         }
         else if(Inventory.GetComponent<inventory>().total_weight < 40)
         {
-            speed = 3.5f;
+            speed = 3.8f;
         }
         else if (Inventory.GetComponent<inventory>().total_weight <60)
         {
-            speed = 3f;
+            speed = 3.6f;
         }
         else if (Inventory.GetComponent<inventory>().total_weight < 80)
         {
-            speed = 2f;
+            speed = 3.4f;
         }
         else if (Inventory.GetComponent<inventory>().total_weight < 100)
         {
-            speed = 1f;
+            speed = 2f;
         }
         else if (Inventory.GetComponent<inventory>().total_weight >= 100)
         {
