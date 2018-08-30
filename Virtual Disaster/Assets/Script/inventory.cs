@@ -16,6 +16,7 @@ public class inventory : MonoBehaviour
     Crouch crouch;
     public bool inven;
     GameObject cubeCamera;
+    UIManager uimanager;
 
     //private bool inven;
     private Vector3 player_posi;
@@ -79,6 +80,7 @@ public class inventory : MonoBehaviour
         //예진//
         crouch = player.GetComponent<Crouch>();
         cubeCamera = player.transform.GetChild(0).gameObject;
+        uimanager = GameObject.Find("UI_System").GetComponent<UIManager>();
 
         pick = player.GetComponent<pickup>();
         rb = player.GetComponent<Rigidbody>();
@@ -99,10 +101,12 @@ public class inventory : MonoBehaviour
             if (inven == false)
             {
                 rb.constraints = RigidbodyConstraints.FreezeAll;
-                //예진// 초점이 켜져있지않다면 다시 킨다
+                //예진// 초점이 켜져있지않다면 다시 킨다, UI도 끈다
+                uimanager.evacUI_1.SetActive(false);
+                uimanager.evacUI_2.SetActive(false);
                 if (!point.enabled)
                 {
-                    point.enabled = true;
+                    point.enabled = true;                    
                 }
 
                 invLight.SetActive(true);
@@ -116,6 +120,9 @@ public class inventory : MonoBehaviour
                 player_posi = player.transform.position;
                 pick.player_place = player_posi;
                 player.transform.position = new Vector3(960, 650, -1318);
+
+                //예진//항상 플레이어의 위치보다 y축으로 0.4높게 카메라가 위치한다
+                cubeCamera.transform.localPosition = new Vector3(0,0.4f,0);
 
                 point.maxReticleDistance = 6;
 
@@ -144,8 +151,12 @@ public class inventory : MonoBehaviour
                 {
                     movement.disable_move = true;
                     player.transform.position = player_posi;
+                    if(crouch.tableCollided)//책상과 아직 접해있다면 들어가는 ui를 다시 킨다
+                    {
+                        uimanager.evacUI_2.SetActive(true);
+                    }
                 }
-                //플레이어가 아직 숙인상태라면 다시 초점을 끈다
+                //플레이어가 아직 숙인상태라면 다시 초점을 끈다,ui도 킨다
                 else if(crouch.isCrouched)
                 {
                     point.enabled = false;
@@ -154,7 +165,8 @@ public class inventory : MonoBehaviour
                     //예진//플레이어 머리에 달린 카메라도 원래 위치로 돌아가게 한다
                     //Debug.Log(crouch.crouchPos);
                     cubeCamera.transform.position = crouch.crouchPos;
-                    
+                    uimanager.evacUI_1.SetActive(true);
+                    uimanager.evacUI_2.SetActive(false);
                     //player.transform.position = player_posi;
 
                 }
