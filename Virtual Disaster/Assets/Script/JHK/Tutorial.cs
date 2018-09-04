@@ -132,6 +132,7 @@ public class Tutorial : MonoBehaviour {
         {
             prevent.SetActive(false);
             nextevent.SetActive(true);
+            player.transform.position = new Vector3(-35, 1.2f, 30);
             player.GetComponent<pickup>().enabled = false;
             EventSyst.GetComponent<inventory>().enabled = false;
         }

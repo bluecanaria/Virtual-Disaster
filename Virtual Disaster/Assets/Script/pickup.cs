@@ -2027,31 +2027,6 @@ public class pickup : MonoBehaviour
 
     public int GetBottle()
     {
-        /* private int Bottle_1_num_save = 0;
-     private int Bottle_2_num_save = 0;
-     private int Bottle_3_num_save = 0;
-     private int Medkit_num_save = 0;
-     private int Candy_Bar_1_num_save = 0;
-     private int Candy_Bar_2_num_save = 0;
-     private int Candy_Bar_3_num_save = 0;
-     private int Towel_num_save = 0;
-     private int Can_1_num_save = 0;
-     private int Can_2_num_save = 0;
-     private int Can_3_num_save = 0;
-     private int Clothes_num_save = 0;
-     private int Cereal_1_num_save = 0;
-     private int Cereal_2_num_save = 0;
-     private int Cup_num_save = 0;
-     private int Flashlight_num_save = 0;
-     private int Knife_num_save = 0;
-     private int Toiletpaper_num_save = 0;
-     private int Bed_sheets_num_save = 0;
-     private int Lighter_num_save = 0;
-     private int Instant_1_num_save = 0;
-     private int Instant_2_num_save = 0;
-     private int Spoon_num_save = 0;
-     private int Plate_num_save = 0;
-     */
         return Bottle_1_num_save + Bottle_2_num_save + Bottle_3_num_save;
     }
 
@@ -2062,7 +2037,7 @@ public class pickup : MonoBehaviour
 
     public int GetFood()
     {
-        return Candy_Bar_1_num_save + Candy_Bar_2_num_save + Candy_Bar_3_num_save;
+        return Candy_Bar_1_num_save + Candy_Bar_2_num_save + Candy_Bar_3_num_save + Can_1_num_save + Can_2_num_save + Can_3_num_save + Cereal_1_num_save + Cereal_2_num_save + Instant_1_num_save + Instant_2_num_save;
     }
 
     public int GetTowel()
@@ -2088,5 +2063,30 @@ public class pickup : MonoBehaviour
     public int GetBlanket()
     {
         return Bed_sheets_num_save;
+    }
+
+    public int GetLighter()
+    {
+        return Lighter_num_save;
+    }
+
+    public int GetClothes()
+    {
+        return Clothes_num_save;
+    }
+
+    public int GetCup()
+    {
+        return Cup_num_save;
+    }
+
+    public int GetPlate()
+    {
+        return Plate_num_save;
+    }
+
+    public int GetSpoon()
+    {
+        return Spoon_num_save;
     }
 }
