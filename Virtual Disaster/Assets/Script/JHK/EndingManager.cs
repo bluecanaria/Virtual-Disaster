@@ -18,6 +18,10 @@ public class EndingManager : MonoBehaviour {
     // 대피 점수용 시간 계산 타이머
     public static float timeforScore2;
 
+    // 대피 점수용 시간 계산 타이머
+    public static float timeforCrouch;
+    private float randomTime;
+
     // 엔딩 스코어
     private int Score_1;
     private int Score_2;
@@ -48,10 +52,12 @@ public class EndingManager : MonoBehaviour {
 
     public GameObject EventSys;
 
-
     //오디오 조절 용
     public GameObject EmerSound;
     public GameObject SirenSound;
+
+    //진동 시스템
+    public GameObject QuakeSystem;
 
     private void Awake()
     {
@@ -76,6 +82,8 @@ public class EndingManager : MonoBehaviour {
     {
         time = 300f;
         timeforScore2 = 0f;
+        timeforCrouch = 0f;
+        randomTime = Random.Range(100, 171);
 
         Score_1 = 0;
         Score_2 = 0;
@@ -92,6 +100,20 @@ public class EndingManager : MonoBehaviour {
         if (time != 0)
         {
             time -= Time.deltaTime;
+
+            if (time <= randomTime)
+            {
+                QuakeSystem.SetActive(true);
+                if (player.GetComponent<Crouch>().isCrouched)
+                {
+                    timeforCrouch += Time.deltaTime;
+                }
+            }
+
+            if (time <= (randomTime - 25f))
+            {
+                QuakeSystem.SetActive(false);
+            }
 
             if (time <= 60f)
             {
@@ -120,16 +142,16 @@ public class EndingManager : MonoBehaviour {
             GotoEnding();
         }
 
-        if (timeforScore2 != 100f)
+        if (timeforScore2 != 120f)
         {
             if(player.transform.position.z < 29.5f && player.transform.position.x < 17f && player.transform.position.x>-41)
             {
                 timeforScore2 += Time.deltaTime;
             }
 
-            if (timeforScore2 >= 100f)
+            if (timeforScore2 >= 120f)
             {
-                timeforScore2 = 100f;
+                timeforScore2 = 120f;
             }
         }
     }
@@ -137,7 +159,12 @@ public class EndingManager : MonoBehaviour {
     private void CountScore()
     {
 
-        Score_2 = 100 - ((int)timeforScore2);
+        Score_2 = 100 - ((int)timeforScore2 / 2);
+
+        if(timeforCrouch < 5f)
+        {
+            Score_2 -= 40;
+        }
 
         if (player.GetComponent<pickup>().GetBottle() >= 3 && player.GetComponent<pickup>().GetFood() >= 2 && player.GetComponent<pickup>().GetMed() >= 1)
         {
