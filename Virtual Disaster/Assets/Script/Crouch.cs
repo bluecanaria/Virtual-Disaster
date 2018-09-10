@@ -54,7 +54,7 @@ public class Crouch : MonoBehaviour
                 uimanager.evacUI_2.SetActive(true);
             }
 
-            cubeCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.4f, player.transform.position.z);
+            cubeCamera.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 0.7f, player.transform.position.z);
             isCrouched = false;
             movement.disable_move = true;
             pointer.enabled = true;
