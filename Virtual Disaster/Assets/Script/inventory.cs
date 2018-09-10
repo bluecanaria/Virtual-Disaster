@@ -121,8 +121,8 @@ public class inventory : MonoBehaviour
                 pick.player_place = player_posi;
                 player.transform.position = new Vector3(960, 650, -1318);
 
-                //예진//항상 플레이어의 위치보다 y축으로 0.4높게 카메라가 위치한다
-                cubeCamera.transform.localPosition = new Vector3(0,0.4f,0);
+                //예진//항상 플레이어의 위치보다 y축으로 0.7높게 카메라가 위치한다
+                cubeCamera.transform.localPosition = new Vector3(0,0.7f,0);
 
                 point.maxReticleDistance = 6;
 
