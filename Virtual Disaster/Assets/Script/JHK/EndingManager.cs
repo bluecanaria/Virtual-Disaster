@@ -59,6 +59,9 @@ public class EndingManager : MonoBehaviour {
     //진동 시스템
     public GameObject QuakeSystem;
 
+    //인아- 인벤토리 이름 ui 용 //
+    public Image[] names = new Image[32];
+
     private void Awake()
     {
         inven = false;
@@ -413,11 +416,154 @@ public class EndingManager : MonoBehaviour {
 
         point.maxReticleDistance = 6;
 
-
-
-
         movement.disable_move = false;
+        PutName(); ///이름 UI 표기
+        GameObject.Find("items_inventory_num").SetActive(false);
+       
 
+
+    }
+
+    private void PutName()
+    {
+        //인아 - 엔딩용 인벤토리 이름 ui 추가//
+        if (player.GetComponent<pickup>().GetBottle() > 0)
+        {
+            names[0].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetMed() > 0)
+        {
+            names[1].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetCandy() > 0)
+        {
+            names[2].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetTowel() > 0)
+        {
+            names[3].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetCan() > 0)
+        {
+            names[4].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetClothes() > 0)
+        {
+            names[5].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetCereal() > 0)
+        {
+            names[6].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetCup() > 0)
+        {
+            names[7].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetFlash() > 0)
+        {
+            names[8].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetCutter() > 0)
+        {
+            names[9].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetTpaper() > 0)
+        {
+            names[10].gameObject.SetActive(true);
+        }
+
+        ////////////////~10
+        if (player.GetComponent<pickup>().GetBlanket() > 0)
+        {
+            names[11].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetLighter() > 0)
+        {
+            names[12].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetInstant() > 0)
+        {
+            names[13].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetSpoon() > 0)
+        {
+            names[14].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetPlate() > 0)
+        {
+            names[15].gameObject.SetActive(true);
+        }
+
+
+
+
+        ///////페이크
+        if (player.GetComponent<pickup>().GetApple() > 0)
+        {
+            names[16].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetBanana() > 0)
+        {
+            names[17].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetBlueprints() > 0)
+        {
+            names[18].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetCalculator() > 0)
+        {
+            names[19].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetChem_Mol() > 0)
+        {
+            names[20].gameObject.SetActive(true);
+        }
+
+        //////~~20
+        if (player.GetComponent<pickup>().GetChemi_Prop() > 0)
+        {
+            names[21].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetCuttingboard() > 0)
+        {
+            names[22].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetGlobe() > 0)
+        {
+            names[23].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetKeyboard() > 0)
+        {
+            names[24].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetMilk() > 0)
+        {
+            names[25].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetMouse() > 0)
+        {
+            names[26].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetNotebook() > 0)
+        {
+            names[27].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetPaper() > 0)
+        {
+            names[28].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetPencil() > 0)
+        {
+            names[29].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetSoda() > 0)
+        {
+            names[30].gameObject.SetActive(true);
+        }
+        if (player.GetComponent<pickup>().GetToilet_Brush() > 0)
+        {
+            names[30].gameObject.SetActive(true);
+        }
     }
 
 }

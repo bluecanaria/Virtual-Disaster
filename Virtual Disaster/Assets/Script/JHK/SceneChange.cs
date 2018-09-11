@@ -29,6 +29,8 @@ public class SceneChange : MonoBehaviour
     public IEnumerator StartLoad(string strSceneName)
     {
         loading.gameObject.SetActive(true);
+        GameObject player = GameObject.Find("Player");
+        player.transform.position = new Vector3(4,8,-31);
 
         async_operation = SceneManager.LoadSceneAsync(strSceneName);
         //async_operation.allowSceneActivation = false;
