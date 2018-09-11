@@ -26,7 +26,7 @@ public class CameraShaker : MonoBehaviour
 
     void OnEnable()
     {
-        originalPos = camTransform.localPosition;
+             originalPos = camTransform.localPosition;
     }
 
     void Update()
@@ -36,6 +36,7 @@ public class CameraShaker : MonoBehaviour
             camTransform.localPosition = originalPos + Random.insideUnitSphere * shakeAmount;
 
             shake -= Time.deltaTime * decreaseFactor;
+
         }
         else
         {
