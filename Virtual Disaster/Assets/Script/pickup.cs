@@ -2089,4 +2089,97 @@ public class pickup : MonoBehaviour
     {
         return Spoon_num_save;
     }
+
+
+    //개별 음식
+    public int GetCandy()
+    {
+        return Candy_Bar_1_num_save + Candy_Bar_2_num_save + Candy_Bar_3_num_save;
+    }
+
+    public int GetCan()
+    {
+        return Can_1_num_save + Can_2_num_save + Can_3_num_save;
+    }
+
+    public int GetCereal()
+    {
+        return Cereal_1_num_save + Cereal_2_num_save;
+    }
+
+
+    public int GetInstant()
+    {
+        return Instant_1_num_save + Instant_2_num_save;
+    }
+
+    //페이크 물건 
+
+    public int GetApple()
+    {
+        return Apple_num_save;
+    }
+
+    public int GetBanana()
+    {
+        return Banana_num_save;
+    }
+    public int GetBlueprints()
+    {
+        return Blueprints_num_save;
+    }
+    public int GetCalculator()
+    {
+        return Calculator_num_save;
+    }
+    public int GetChem_Mol()
+    {
+        return Chem_Mol_num_save;
+    }
+    public int GetChemi_Prop()
+    {
+        return Chemi_Prop_1_num_save + Chemi_Prop_2_num_save;
+    }
+    public int GetCuttingboard()
+    {
+        return Cuttingboard_num_save;
+    }
+    public int GetGlobe()
+    {
+        return Globe_num_save;
+    }
+    public int GetKeyboard()
+    {
+        return Keyboard_num_save;
+    }
+    public int GetMilk()
+    {
+        return Milk_num_save;
+    }
+    public int GetMouse()
+    {
+        return Mouse_num_save;
+    }
+    public int GetNotebook()
+    {
+        return Notebook_num_save;
+    }
+    public int GetPaper()
+    {
+        return Paper_num_save;
+    }
+    public int GetPencil()
+    {
+        return Pencil_num_save;
+    }
+    public int GetSoda()
+    {
+        return Soda_num_save;
+    }
+    public int GetToilet_Brush()
+    {
+        return Toilet_Brush_num_save;
+    }
+
+
 }
